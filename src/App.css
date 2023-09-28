@@ -1,0 +1,10 @@
+body {
+  background-color: antiquewhite;
+}
+.App-wrapper {
+  max-width: 85rem;
+  margin: 7px auto;
+}
+.container {
+  background-color: white;
+}
