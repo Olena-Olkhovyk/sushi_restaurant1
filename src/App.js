@@ -1,6 +1,7 @@
 import "./App.css";
 import Header from "./Components/Header/Header";
 import SearchInput from "./Components/Searchinput/SearchInput";
+import FilterCategories from "./Components/Filter/FilterCategories";
 function App() {
   return (
     <div className="App-wrapper">
@@ -11,7 +12,9 @@ function App() {
         <div className="search-container">
           <SearchInput />
         </div>
-        <div className="filter-container"></div>
+        <div className="filter-container">
+          <FilterCategories />
+        </div>
       </div>
     </div>
   );
