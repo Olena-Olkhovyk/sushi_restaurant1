@@ -4,9 +4,6 @@ import classes from "./Sort.module.css";
 const Sort = () => {
   const [selected, setSelected] = React.useState(0);
   const sortList = ["popularity", "price", "a-z"];
-  const toogleList = (index) => {
-    setSelected(index);
-  };
   return (
     <div className={classes.sort}>
       <b>Sort by: </b>
@@ -16,7 +13,7 @@ const Sort = () => {
           {sortList.map((val, i) => (
             <li
               key={val}
-              onClick={() => toogleList(i)}
+              onClick={() => setSelected(i)}
               className={selected === i ? classes.active : ""}
             >
               {val}
