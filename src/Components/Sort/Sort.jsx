@@ -5,6 +5,10 @@ const Sort = () => {
   const [selected, setSelected] = React.useState(0);
   const [open, setOpen] = React.useState(false);
   const sortList = ["popularity", "price", "a-z"];
+  const highlightAndClosePopup = (index) => {
+    setSelected(index);
+    setOpen(false);
+  };
   return (
     <div className={classes.sort}>
       <b>Sort by: </b>
@@ -15,7 +19,7 @@ const Sort = () => {
             {sortList.map((val, i) => (
               <li
                 key={val}
-                onClick={() => setSelected(i)}
+                onClick={() => highlightAndClosePopup(i)}
                 className={selected === i ? classes.active : ""}
               >
                 {val}
