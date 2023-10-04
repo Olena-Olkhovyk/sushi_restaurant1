@@ -5,8 +5,13 @@ function App() {
   return (
     <div className="App-wrapper">
       <div className="container">
-        <Header />
-        <SearchInput />
+        <div className="header-container">
+          <Header />
+        </div>
+        <div className="search-container">
+          <SearchInput />
+        </div>
+        <div className="filter-container"></div>
       </div>
     </div>
   );
