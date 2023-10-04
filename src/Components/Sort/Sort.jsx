@@ -2,15 +2,26 @@ import React from "react";
 import classes from "./Sort.module.css";
 
 const Sort = () => {
+  const [selected, setSelected] = React.useState(0);
+  const sortList = ["popularity", "price", "a-z"];
+  const toogleList = (index) => {
+    setSelected(index);
+  };
   return (
     <div className={classes.sort}>
       <b>Sort by: </b>
       <span>popularity</span>
       <div className={classes.sortPopUp}>
         <ul className={classes.listWrapper}>
-          <li>popularity</li>
-          <li>price</li>
-          <li>A-Z</li>
+          {sortList.map((val, i) => (
+            <li
+              key={val}
+              onClick={() => toogleList(i)}
+              className={selected === i ? classes.active : ""}
+            >
+              {val}
+            </li>
+          ))}
         </ul>
       </div>
     </div>
