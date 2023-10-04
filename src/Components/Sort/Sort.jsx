@@ -5,6 +5,7 @@ const Sort = () => {
   const [selected, setSelected] = React.useState(0);
   const [open, setOpen] = React.useState(false);
   const sortList = ["popularity", "price", "a-z"];
+  const selectedOption = sortList[selected];
   const highlightAndClosePopup = (index) => {
     setSelected(index);
     setOpen(false);
@@ -12,7 +13,7 @@ const Sort = () => {
   return (
     <div className={classes.sort}>
       <b>Sort by: </b>
-      <span onClick={() => setOpen(!open)}>popularity</span>
+      <span onClick={() => setOpen(!open)}>{selectedOption}</span>
       <div className={classes.sortPopUp}>
         {open && (
           <ul className={classes.listWrapper}>
