@@ -20,7 +20,7 @@
   cursor: pointer;
   color: white;
 }
-.active {
+li.active {
   background-color: rgba(0, 0, 0, 0.785);
   color: white;
 }
