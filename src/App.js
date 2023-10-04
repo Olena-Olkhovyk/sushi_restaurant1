@@ -2,6 +2,7 @@ import "./App.css";
 import Header from "./Components/Header/Header";
 import SearchInput from "./Components/Searchinput/SearchInput";
 import FilterCategories from "./Components/Filter/FilterCategories";
+import Sort from "./Components/Sort/Sort";
 function App() {
   return (
     <div className="App-wrapper">
@@ -13,6 +14,7 @@ function App() {
           <SearchInput />
         </div>
         <div className="filter-container">
+          <Sort />
           <FilterCategories />
         </div>
       </div>
