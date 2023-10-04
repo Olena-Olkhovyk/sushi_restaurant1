@@ -1,0 +1,35 @@
+.sort {
+  position: absolute;
+  right: 50px;
+  top: 130px;
+  margin-top: 3rem;
+}
+.listWrapper {
+  background-color: white;
+  box-shadow: 5px 5px 5px 5px rgba(128, 128, 128, 0.196);
+}
+.listWrapper li {
+  list-style: none;
+  padding: 8px 8px;
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+.listWrapper li:hover {
+  cursor: pointer;
+  color: rgba(229, 81, 18, 0.557);
+}
+.listWrapper li.active {
+  color: rgba(229, 81, 18, 0.557);
+}
+b,
+span {
+  font-size: 23px;
+}
+span {
+  text-decoration: dotted;
+  color: rgba(229, 81, 18, 0.557);
+}
+span:hover {
+  cursor: pointer;
+  color: rgba(229, 81, 18, 0.733);
+}
