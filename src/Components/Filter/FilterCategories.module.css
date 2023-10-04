@@ -1,0 +1,26 @@
+.listWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+.listWrapper li {
+  list-style: none;
+  font-size: 20px;
+  background-color: rgba(0, 0, 0, 0.11);
+  color: black;
+  padding: 10px 17px;
+  font-weight: 700;
+  border-radius: 50%;
+  transition: all 0.5s ease;
+}
+.listWrapper li:hover {
+  background-color: rgba(0, 0, 0, 0.785);
+  cursor: pointer;
+  color: white;
+}
+.active {
+  background-color: rgba(0, 0, 0, 0.785);
+  color: white;
+}
