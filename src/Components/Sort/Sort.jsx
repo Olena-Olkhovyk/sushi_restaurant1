@@ -13,7 +13,9 @@ const Sort = () => {
   return (
     <div className={classes.sort}>
       <b>Sort by: </b>
-      <span onClick={() => setOpen(!open)}>{selectedOption}</span>
+      <span className={classes.options} onClick={() => setOpen(!open)}>
+        {selectedOption}
+      </span>
       <div className={classes.sortPopUp}>
         {open && (
           <ul className={classes.listWrapper}>

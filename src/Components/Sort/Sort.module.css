@@ -22,14 +22,14 @@
   color: rgba(229, 81, 18, 0.557);
 }
 b,
-span {
+.options {
   font-size: 23px;
 }
-span {
+.options {
   text-decoration: dotted;
   color: rgba(229, 81, 18, 0.557);
 }
-span:hover {
+.options:hover {
   cursor: pointer;
   color: rgba(229, 81, 18, 0.733);
 }
