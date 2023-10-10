@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import Header from "./Components/Header/Header";
-import Home from "./pages/Home";
+import { Outlet } from "react-router";
 // import NotFound from "./Components/NotFoundBlock/index.jsx";
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
           <Header />
         </div>
         <div className="content">
-          <Home />
+          <Outlet></Outlet>
         </div>
       </div>
     </div>
