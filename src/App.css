@@ -1,12 +1,11 @@
 body {
   background-color: antiquewhite;
 }
-.App-wrapper {
-  max-width: 85rem;
-  margin: 2px auto;
-}
 .container {
   background-color: white;
+  max-width: 85rem;
+  margin: 2px auto;
+  border-radius: 50px;
 }
 .itemCard {
   display: grid;
