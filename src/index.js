@@ -1,9 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
-// import NotFound from "./Components/NotFoundBlock";
+import NotFound from "./Components/NotFoundBlock";
 import Cart from "./pages/Cart";
 import Home from "./pages/Home";
 const router = createBrowserRouter([
@@ -18,6 +17,10 @@ const router = createBrowserRouter([
       {
         path: "/cart",
         element: <Cart />,
+      },
+      {
+        path: "*",
+        element: <NotFound />,
       },
     ],
   },
