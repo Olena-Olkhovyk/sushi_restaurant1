@@ -1,5 +1,6 @@
 import React from "react";
 import classes from "./CartBlock.module.css";
+import { Link } from "react-router-dom";
 
 const CartBlock = () => {
   return (
@@ -31,6 +32,22 @@ const CartBlock = () => {
         <div className={classes.deleteItem}>
           <i className="fa-regular fa-circle-xmark"></i>
         </div>
+      </div>
+      <div className={classes.orderDetails}>
+        <p>
+          Total items:<span>3</span>
+        </p>
+        <p>
+          Total cost:<span>100$</span>
+        </p>
+      </div>
+      <div className={classes.bottomButtons}>
+        <Link to="/" className={classes.backHome}>
+          <i class="fa-solid fa-chevron-left"></i> Back to home
+        </Link>
+        <Link to="" className={classes.orderNow}>
+          Order now
+        </Link>
       </div>
     </div>
   );

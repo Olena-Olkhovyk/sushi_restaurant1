@@ -57,3 +57,43 @@
   color: grey;
   cursor: pointer;
 }
+.orderDetails {
+  display: flex;
+  justify-content: space-between;
+  margin: 0px 90px;
+  margin-top: 2rem;
+}
+.bottomButtons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 2rem;
+}
+.backHome {
+  background-color: inherit;
+  border: 1px solid rgba(128, 128, 128, 0.393);
+  border-radius: 50px;
+  padding: 10px 15px;
+  font-size: 16px;
+  text-decoration: none;
+  color: black;
+}
+.backHome:hover {
+  cursor: pointer;
+  border: 1px solid black;
+  transition: all 0.5s ease;
+}
+.orderNow {
+  background-color: rgba(229, 81, 18, 0.557);
+  border: 1px solid rgb(229, 81, 18);
+  border-radius: 50px;
+  color: white;
+  padding: 10px 15px;
+  font-size: 16px;
+  text-decoration: none;
+}
+.orderNow:hover {
+  background-color: white;
+  color: rgb(229, 81, 18);
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
