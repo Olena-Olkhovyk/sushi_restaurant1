@@ -1,0 +1,59 @@
+.cartBlock {
+  padding: 0 0 70px;
+  font-size: 20px;
+}
+.cartHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.deleteAll {
+  text-align: right;
+  position: relative;
+  right: 40px;
+}
+.deleteAll:hover {
+  cursor: pointer;
+  color: rgb(86, 85, 85);
+}
+.cartContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.itemInfo {
+  display: flex;
+  gap: 4px;
+}
+.sushiImg {
+  width: 100px;
+  height: auto;
+}
+.sauseInfo {
+  position: relative;
+  right: 126px;
+  bottom: -25px;
+  color: grey;
+}
+.itemAmount {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+.minus,
+.plus {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid rgba(229, 81, 18, 0.557);
+  background-color: inherit;
+}
+.minus:hover,
+.plus:hover {
+  background-color: rgba(229, 81, 18, 0.557);
+  cursor: pointer;
+}
+.deleteItem i:hover {
+  color: grey;
+  cursor: pointer;
+}
