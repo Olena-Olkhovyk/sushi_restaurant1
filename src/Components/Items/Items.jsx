@@ -2,6 +2,7 @@ import React from "react";
 import classes from "./Items.module.css";
 
 const Items = ({ image, title, price, sauce }) => {
+  const [activeId, setActiveId] = React.useState(0);
   return (
     <div className={classes.productContainer}>
       <div className={classes.imgContainer}>
@@ -11,7 +12,13 @@ const Items = ({ image, title, price, sauce }) => {
         <h2 className={classes.itemTitle}>{title}</h2>
         <ul className={classes.sause}>
           {sauce.map((sauce, id) => (
-            <li key={id}>{sauce}</li>
+            <li
+              key={id}
+              onClick={() => setActiveId(id)}
+              className={activeId === id ? classes.active : ""}
+            >
+              {sauce}
+            </li>
           ))}
         </ul>
         <div className={classes.priceDetails}>

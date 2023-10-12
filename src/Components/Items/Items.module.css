@@ -25,12 +25,14 @@
 }
 .sause li {
   list-style: none;
-  background-color: white;
   padding: 4px;
   border-radius: 5px;
 }
 .sause li:hover {
   cursor: pointer;
+}
+.sause li.active {
+  background-color: white;
 }
 .priceDetails {
   display: flex;
