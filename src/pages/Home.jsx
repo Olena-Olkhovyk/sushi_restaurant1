@@ -8,15 +8,22 @@ import Skeleton from "../Components/Items/Skeleton";
 const Home = () => {
   const [item, setItem] = React.useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [categoryId, setCategoryId] = React.useState(0);
+
   React.useEffect(() => {
-    fetch("https://651ee1a444a3a8aa476925cf.mockapi.io/sushi")
+    setIsLoading(true);
+    fetch(
+      `https://651ee1a444a3a8aa476925cf.mockapi.io/sushi?${
+        categoryId > 0 ? `category=${categoryId}` : ""
+      }`
+    )
       .then((res) => res.json())
       .then((arr) => {
         setItem(arr);
         setIsLoading(false);
       });
     window.scrollTo(0, 0);
-  }, []);
+  }, [categoryId]);
   return (
     <>
       <div className="search-container">
@@ -24,7 +31,10 @@ const Home = () => {
       </div>
       <div className="filter-container">
         <Sort />
-        <FilterCategories />
+        <FilterCategories
+          categoryId={categoryId}
+          onClickCategory={(i) => setCategoryId(i)}
+        />
       </div>
       <div className="items-container">
         <article className="itemCard">
