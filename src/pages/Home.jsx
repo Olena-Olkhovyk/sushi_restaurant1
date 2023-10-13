@@ -9,13 +9,17 @@ const Home = () => {
   const [item, setItem] = React.useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [categoryId, setCategoryId] = React.useState(0);
+  const [sortType, setSortType] = React.useState({
+    name: "popularity",
+    sortProperty: "rating",
+  });
 
   React.useEffect(() => {
     setIsLoading(true);
     fetch(
       `https://651ee1a444a3a8aa476925cf.mockapi.io/sushi?${
         categoryId > 0 ? `category=${categoryId}` : ""
-      }`
+      }&sortBy=${sortType.sortProperty}&order=desc`
     )
       .then((res) => res.json())
       .then((arr) => {
@@ -23,14 +27,14 @@ const Home = () => {
         setIsLoading(false);
       });
     window.scrollTo(0, 0);
-  }, [categoryId]);
+  }, [categoryId, sortType]);
   return (
     <>
       <div className="search-container">
         <SearchInput />
       </div>
       <div className="filter-container">
-        <Sort />
+        <Sort value={sortType} onChangeSort={(i) => setSortType(i)} />
         <FilterCategories
           categoryId={categoryId}
           onClickCategory={(i) => setCategoryId(i)}

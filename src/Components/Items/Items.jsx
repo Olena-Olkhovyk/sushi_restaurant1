@@ -22,7 +22,7 @@ const Items = ({ image, title, price, sauce }) => {
           ))}
         </ul>
         <div className={classes.priceDetails}>
-          <span className={classes.price}>{price}</span>
+          <span className={classes.price}>${price}</span>
           <button className={classes.orderBtn}>Add to cart</button>
         </div>
       </div>

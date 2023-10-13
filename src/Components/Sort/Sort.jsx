@@ -1,31 +1,36 @@
 import React from "react";
 import classes from "./Sort.module.css";
 
-const Sort = () => {
-  const [selected, setSelected] = React.useState(0);
+const Sort = ({ value, onChangeSort }) => {
   const [open, setOpen] = React.useState(false);
-  const sortList = ["popularity", "price", "a-z"];
-  const selectedOption = sortList[selected];
+  const sortList = [
+    { name: "popularity", sortProperty: "rating" },
+    { name: "a-z", sortProperty: "title" },
+
+    { name: "price", sortProperty: "price" },
+  ];
   const highlightAndClosePopup = (index) => {
-    setSelected(index);
+    onChangeSort(index);
     setOpen(false);
   };
   return (
     <div className={classes.sort}>
       <b>Sort by: </b>
       <span className={classes.options} onClick={() => setOpen(!open)}>
-        {selectedOption}
+        {value.name}
       </span>
       <div className={classes.sortPopUp}>
         {open && (
           <ul className={classes.listWrapper}>
-            {sortList.map((val, i) => (
+            {sortList.map((obj, i) => (
               <li
-                key={val}
-                onClick={() => highlightAndClosePopup(i)}
-                className={selected === i ? classes.active : ""}
+                key={i}
+                onClick={() => highlightAndClosePopup(obj)}
+                className={
+                  value.sortProperty === obj.sortProperty ? classes.active : ""
+                }
               >
-                {val}
+                {obj.name}
               </li>
             ))}
           </ul>
