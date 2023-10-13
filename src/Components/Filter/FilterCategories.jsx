@@ -2,7 +2,7 @@ import React from "react";
 import classes from "./FilterCategories.module.css";
 
 const FilterCategories = ({ categoryId, onClickCategory }) => {
-  const categories = ["All", "Rolls", "Royal", "Sushi sets"];
+  const categories = ["All", "Premium", "Rolls", "Royal", "Sushi sets"];
   return (
     <>
       <ul className={classes.listWrapper}>
