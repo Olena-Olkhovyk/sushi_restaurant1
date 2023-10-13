@@ -43,7 +43,7 @@ const CartBlock = () => {
       </div>
       <div className={classes.bottomButtons}>
         <Link to="/" className={classes.backHome}>
-          <i class="fa-solid fa-chevron-left"></i> Back to home
+          <i className="fa-solid fa-chevron-left"></i> Back to home
         </Link>
         <Link to="" className={classes.orderNow}>
           Order now
