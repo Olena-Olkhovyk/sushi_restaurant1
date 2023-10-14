@@ -15,11 +15,11 @@ const Home = () => {
   });
 
   React.useEffect(() => {
+    const category = categoryId > 0 ? `category=${categoryId}` : "";
+    const sort = sortType.sortProperty;
     setIsLoading(true);
     fetch(
-      `https://651ee1a444a3a8aa476925cf.mockapi.io/sushi?${
-        categoryId > 0 ? `category=${categoryId}` : ""
-      }&sortBy=${sortType.sortProperty}&order=desc`
+      `https://651ee1a444a3a8aa476925cf.mockapi.io/sushi?${category}&sortBy=${sort}&order=asc`
     )
       .then((res) => res.json())
       .then((arr) => {
