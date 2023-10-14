@@ -1,10 +1,15 @@
 import React from "react";
-import classes from "./SearchInput.module.css";
+import "./SearchInput.css";
 
-const SearchInput = () => {
+const SearchInput = ({ searchValue, setSearchValue }) => {
   return (
-    <div className={classes.searchField}>
-      <input type="text" className={classes.input} placeholder="Search sushi" />
+    <div className="searchField">
+      <input
+        value={searchValue}
+        onChange={(e) => setSearchValue(e.target.value)}
+        type="text"
+        placeholder="Search sushi"
+      />
     </div>
   );
 };

@@ -8,18 +8,19 @@ import Skeleton from "../Components/Items/Skeleton";
 const Home = () => {
   const [item, setItem] = React.useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [searchValue, setSearchValue] = React.useState("");
   const [categoryId, setCategoryId] = React.useState(0);
   const [sortType, setSortType] = React.useState({
     name: "popularity",
     sortProperty: "rating",
   });
-
   React.useEffect(() => {
     const category = categoryId > 0 ? `category=${categoryId}` : "";
     const sort = sortType.sortProperty;
+    const search = searchValue ? `&search=${searchValue}` : "";
     setIsLoading(true);
     fetch(
-      `https://651ee1a444a3a8aa476925cf.mockapi.io/sushi?${category}&sortBy=${sort}&order=asc`
+      `https://651ee1a444a3a8aa476925cf.mockapi.io/sushi?${category}&sortBy=${sort}&order=asc${search}`
     )
       .then((res) => res.json())
       .then((arr) => {
@@ -27,11 +28,14 @@ const Home = () => {
         setIsLoading(false);
       });
     window.scrollTo(0, 0);
-  }, [categoryId, sortType]);
+  }, [categoryId, sortType, searchValue]);
   return (
     <>
       <div className="search-container">
-        <SearchInput />
+        <SearchInput
+          searchValue={searchValue}
+          setSearchValue={setSearchValue}
+        />
       </div>
       <div className="filter-container">
         <Sort value={sortType} onChangeSort={(i) => setSortType(i)} />
