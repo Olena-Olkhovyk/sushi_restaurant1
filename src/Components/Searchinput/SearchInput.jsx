@@ -7,7 +7,7 @@ const SearchInput = ({ searchValue, setSearchValue }) => {
       <input
         value={searchValue}
         onChange={(e) => setSearchValue(e.target.value)}
-        type="text"
+        type="search"
         placeholder="Search sushi"
       />
     </div>
