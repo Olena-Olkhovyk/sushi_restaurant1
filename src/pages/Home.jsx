@@ -4,7 +4,7 @@ import FilterCategories from "../Components/Filter/FilterCategories";
 import Sort from "../Components/Sort/Sort";
 import Items from "../Components/Items/Items";
 import Skeleton from "../Components/Items/Skeleton";
-import classes from "./Home.module.css";
+import Pagination from "../Components/pagination/Pagination";
 
 const Home = () => {
   const [item, setItem] = React.useState([]);
@@ -34,19 +34,15 @@ const Home = () => {
       });
     window.scrollTo(0, 0);
   }, [categoryId, sortType, searchValue]);
+
   //How many pages will be displayed on page
   const numberOfTotalPages = Math.ceil(item.length / itemsPerPage);
   //Turn number of pages(4) to array
-  const pages = [...Array(numberOfTotalPages + 1).keys()].slice(1);
+
   const indexOfLastElem = currentPage * itemsPerPage;
   const indexofFirstElement = indexOfLastElem - itemsPerPage;
   const visibleitems = item.slice(indexofFirstElement, indexOfLastElem);
-  const prevPage = () => {
-    if (currentPage !== 1) setCurrentPage(currentPage - 1);
-  };
-  const nextPage = () => {
-    if (currentPage !== numberOfTotalPages) setCurrentPage(currentPage + 1);
-  };
+
   return (
     <>
       <div className="search-container">
@@ -63,19 +59,11 @@ const Home = () => {
         />
       </div>
       <div className="items-container">
-        <span className={classes.pages}>
-          <span onClick={() => prevPage()}>prev</span>
-          {pages.map((page) => (
-            <p
-              key={page}
-              onClick={() => setCurrentPage(page)}
-              className={currentPage === page ? classes.active : ""}
-            >
-              {page}
-            </p>
-          ))}
-          <span onClick={() => nextPage()}>next</span>
-        </span>
+        <Pagination
+          currentPage={currentPage}
+          numberOfTotalPages={numberOfTotalPages}
+          setCurrentPage={setCurrentPage}
+        />
         <article className="itemCard">
           {isLoading
             ? [...new Array(8)].map((_, i) => <Skeleton key={i} />)
