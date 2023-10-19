@@ -1,7 +1,9 @@
 import React from "react";
 import classes from "./Sort.module.css";
+import { useDispatch, useSelector } from "react-redux";
+import { setSort } from "../../redux/slices/filterSlice";
 
-const Sort = ({ value, onChangeSort }) => {
+const Sort = () => {
   const [open, setOpen] = React.useState(false);
   const sortList = [
     { name: "popularity", sortProperty: "rating" },
@@ -9,8 +11,11 @@ const Sort = ({ value, onChangeSort }) => {
 
     { name: "price", sortProperty: "price" },
   ];
-  const highlightAndClosePopup = (index) => {
-    onChangeSort(index);
+  const dispatch = useDispatch();
+  const value = useSelector((state) => state.filter.sort);
+
+  const highlightAndClosePopup = (obj) => {
+    dispatch(setSort(obj));
     setOpen(false);
   };
   return (

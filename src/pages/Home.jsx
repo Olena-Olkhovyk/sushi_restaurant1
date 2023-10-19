@@ -15,14 +15,9 @@ const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [searchValue, setSearchValue] = React.useState("");
 
-  const [sortType, setSortType] = React.useState({
-    name: "popularity",
-    sortProperty: "rating",
-  });
-  const itemsPerPage = 4;
-
   //FILTER CATEGORIES from redux
   const categoryId = useSelector((state) => state.filter.categoryId);
+  const sortType = useSelector((state) => state.filter.sort.sortProperty);
   const dispatch = useDispatch();
   const onClickCategory = (id) => {
     dispatch(setCategoryId(id));
@@ -31,7 +26,7 @@ const Home = () => {
 
   React.useEffect(() => {
     const category = categoryId > 0 ? `category=${categoryId}` : "";
-    const sort = sortType.sortProperty;
+    const sort = sortType;
     const search = searchValue ? `&search=${searchValue}` : "";
     setIsLoading(true);
     fetch(
@@ -45,6 +40,7 @@ const Home = () => {
     window.scrollTo(0, 0);
   }, [categoryId, sortType, searchValue]);
 
+  const itemsPerPage = 4;
   //How many pages will be displayed on page
   const numberOfTotalPages = Math.ceil(item.length / itemsPerPage);
   //Turn number of pages(4) to array
@@ -62,7 +58,7 @@ const Home = () => {
         />
       </div>
       <div className="filter-container">
-        <Sort value={sortType} onChangeSort={(i) => setSortType(i)} />
+        <Sort />
         <FilterCategories
           categoryId={categoryId}
           onClickCategory={onClickCategory}
