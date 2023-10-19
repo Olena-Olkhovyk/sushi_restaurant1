@@ -1,9 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-//Import storage with all data
 import { store } from "./redux/store";
-//Import provider which allows react know about redux-toolkit
 import { Provider } from "react-redux";
 
 import App from "./App";
