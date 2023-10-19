@@ -1,22 +1,34 @@
 import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+
 import SearchInput from "../Components/Searchinput/SearchInput";
 import FilterCategories from "../Components/Filter/FilterCategories";
 import Sort from "../Components/Sort/Sort";
 import Items from "../Components/Items/Items";
 import Skeleton from "../Components/Items/Skeleton";
 import Pagination from "../Components/pagination/Pagination";
+import { setCategoryId } from "../redux/slices/filterSlice";
 
 const Home = () => {
   const [item, setItem] = React.useState([]);
   const [currentPage, setCurrentPage] = React.useState(1);
   const [isLoading, setIsLoading] = useState(true);
   const [searchValue, setSearchValue] = React.useState("");
-  const [categoryId, setCategoryId] = React.useState(0);
+
   const [sortType, setSortType] = React.useState({
     name: "popularity",
     sortProperty: "rating",
   });
   const itemsPerPage = 4;
+
+  //FILTER CATEGORIES from redux
+  const categoryId = useSelector((state) => state.filter.categoryId);
+  const dispatch = useDispatch();
+  const onClickCategory = (id) => {
+    dispatch(setCategoryId(id));
+  };
+  //FILTER CATEGORIES from redux
+
   React.useEffect(() => {
     const category = categoryId > 0 ? `category=${categoryId}` : "";
     const sort = sortType.sortProperty;
@@ -53,7 +65,7 @@ const Home = () => {
         <Sort value={sortType} onChangeSort={(i) => setSortType(i)} />
         <FilterCategories
           categoryId={categoryId}
-          onClickCategory={(i) => setCategoryId(i)}
+          onClickCategory={onClickCategory}
         />
       </div>
       <div className="items-container">
