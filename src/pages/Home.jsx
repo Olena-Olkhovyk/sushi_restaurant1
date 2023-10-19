@@ -9,16 +9,14 @@ import Pagination from "../Components/pagination/Pagination";
 const Home = () => {
   const [item, setItem] = React.useState([]);
   const [currentPage, setCurrentPage] = React.useState(1);
-  const [itemsPerPage, setItemsPerPage] = React.useState(4);
   const [isLoading, setIsLoading] = useState(true);
-
   const [searchValue, setSearchValue] = React.useState("");
   const [categoryId, setCategoryId] = React.useState(0);
   const [sortType, setSortType] = React.useState({
     name: "popularity",
     sortProperty: "rating",
   });
-
+  const itemsPerPage = 4;
   React.useEffect(() => {
     const category = categoryId > 0 ? `category=${categoryId}` : "";
     const sort = sortType.sortProperty;
