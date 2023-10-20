@@ -12,7 +12,7 @@ const Sort = () => {
     { name: "price", sortProperty: "price" },
   ];
   const dispatch = useDispatch();
-  const value = useSelector((state) => state.filter.sort);
+  const sort = useSelector((state) => state.filter.sort);
 
   const highlightAndClosePopup = (obj) => {
     dispatch(setSort(obj));
@@ -22,7 +22,7 @@ const Sort = () => {
     <div className={classes.sort}>
       <b>Sort by: </b>
       <span className={classes.options} onClick={() => setOpen(!open)}>
-        {value.name}
+        {sort.name}
       </span>
       <div className={classes.sortPopUp}>
         {open && (
@@ -32,7 +32,7 @@ const Sort = () => {
                 key={i}
                 onClick={() => highlightAndClosePopup(obj)}
                 className={
-                  value.sortProperty === obj.sortProperty ? classes.active : ""
+                  sort.sortProperty === obj.sortProperty ? classes.active : ""
                 }
               >
                 {obj.name}
