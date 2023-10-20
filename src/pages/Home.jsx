@@ -31,12 +31,12 @@ const Home = () => {
     const sort = sortType;
     const search = searchValue ? `&search=${searchValue}` : "";
     setIsLoading(true);
-    fetch(
-      `https://651ee1a444a3a8aa476925cf.mockapi.io/sushi?${category}&sortBy=${sort}&order=asc${search}`
-    )
-      .then((res) => res.json())
-      .then((arr) => {
-        setItem(arr);
+    axios
+      .get(
+        `https://651ee1a444a3a8aa476925cf.mockapi.io/sushi?${category}&sortBy=${sort}&order=asc${search}`
+      )
+      .then((res) => {
+        setItem(res.data);
         setIsLoading(false);
       });
     window.scrollTo(0, 0);
