@@ -9,12 +9,13 @@ import Items from "../Components/Items/Items";
 import Skeleton from "../Components/Items/Skeleton";
 import Pagination from "../Components/pagination/Pagination";
 import { setCategoryId } from "../redux/slices/filterSlice";
+import { SearchContext } from "../App";
 
 const Home = () => {
   const [item, setItem] = React.useState([]);
   const [currentPage, setCurrentPage] = React.useState(1);
   const [isLoading, setIsLoading] = useState(true);
-  const [searchValue, setSearchValue] = React.useState("");
+  const { searchValue } = React.useContext(SearchContext);
 
   //FILTER CATEGORIES from redux
   const { categoryId, sort } = useSelector((state) => state.filter);
@@ -54,10 +55,7 @@ const Home = () => {
   return (
     <>
       <div className="search-container">
-        <SearchInput
-          searchValue={searchValue}
-          setSearchValue={setSearchValue}
-        />
+        <SearchInput />
       </div>
       <div className="filter-container">
         <Sort />
