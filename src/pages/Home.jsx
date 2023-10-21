@@ -16,11 +16,9 @@ const Home = () => {
   const [currentPage, setCurrentPage] = React.useState(1);
   const [isLoading, setIsLoading] = useState(true);
   const { searchValue } = React.useContext(SearchContext);
-
   //FILTER CATEGORIES from redux
   const { categoryId, sort } = useSelector((state) => state.filter);
   const sortType = sort.sortProperty;
-  // const sortType = useSelector((state) => state.filter.sort.sortProperty);
   const dispatch = useDispatch();
   const onClickCategory = (id) => {
     dispatch(setCategoryId(id));
