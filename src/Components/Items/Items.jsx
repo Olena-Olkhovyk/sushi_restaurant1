@@ -2,12 +2,16 @@ import React from "react";
 import classes from "./Items.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { addItem } from "../../redux/slices/cartSlice";
-
 const sauceType = ["unagi sauce", "teriyaki sauce"];
 
 const Items = ({ id, image, title, price, sauce }) => {
   const [activeId, setActiveId] = React.useState(0);
   const dispatch = useDispatch();
+
+  const cartItem = useSelector((state) =>
+    state.cart.items.find((obj) => obj.id === id)
+  );
+  const addedCount = cartItem ? cartItem.count : 0;
   const onClickAdd = () => {
     const item = {
       id,
@@ -39,7 +43,10 @@ const Items = ({ id, image, title, price, sauce }) => {
         <div className={classes.priceDetails}>
           <span className={classes.price}>${price}</span>
           <button onClick={onClickAdd} className={classes.orderBtn}>
-            Add to cart <span className={classes.itemAmount}>0</span>
+            Add to cart{" "}
+            {addedCount > 0 && (
+              <span className={classes.itemAmount}>{addedCount}</span>
+            )}
           </button>
         </div>
       </div>
