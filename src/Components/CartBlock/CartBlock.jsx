@@ -1,8 +1,10 @@
 import React from "react";
 import classes from "./CartBlock.module.css";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const CartBlock = () => {
+  const { items, totalPrice } = useSelector((state) => state.cart);
   return (
     <div className={classes.cartBlock}>
       <div className={classes.cartHeader}>
@@ -35,10 +37,10 @@ const CartBlock = () => {
       </div>
       <div className={classes.orderDetails}>
         <p>
-          Total items:<span>3</span>
+          Total items:<span>{items.length}</span>
         </p>
         <p>
-          Total cost:<span>100$</span>
+          Total cost:<span>{totalPrice}$</span>
         </p>
       </div>
       <div className={classes.bottomButtons}>
