@@ -1,8 +1,7 @@
 import React from "react";
 import classes from "./Items.module.css";
 
-const Items = ({ image, title, price, sauce }) => {
-  const [activeId, setActiveId] = React.useState(0);
+const Items = ({ id, image, title, price, sauce }) => {
   return (
     <div className={classes.productContainer}>
       <div className={classes.imgContainer}>
@@ -23,7 +22,9 @@ const Items = ({ image, title, price, sauce }) => {
         </ul>
         <div className={classes.priceDetails}>
           <span className={classes.price}>${price}</span>
-          <button className={classes.orderBtn}>Add to cart</button>
+          <button onClick={onClickAdd} className={classes.orderBtn}>
+            Add to cart <span className={classes.itemAmount}>0</span>
+          </button>
         </div>
       </div>
     </div>
