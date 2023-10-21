@@ -1,7 +1,23 @@
 import React from "react";
 import classes from "./Items.module.css";
+import { useDispatch, useSelector } from "react-redux";
+import { addItem } from "../../redux/slices/cartSlice";
+
+const sauceType = ["unagi sauce", "teriyaki sauce"];
 
 const Items = ({ id, image, title, price, sauce }) => {
+  const [activeId, setActiveId] = React.useState(0);
+  const dispatch = useDispatch();
+  const onClickAdd = () => {
+    const item = {
+      id,
+      image,
+      title,
+      price,
+      sauce: sauceType[activeId],
+    };
+    dispatch(addItem(item));
+  };
   return (
     <div className={classes.productContainer}>
       <div className={classes.imgContainer}>
@@ -10,7 +26,7 @@ const Items = ({ id, image, title, price, sauce }) => {
       <div className={classes.description}>
         <h2 className={classes.itemTitle}>{title}</h2>
         <ul className={classes.sause}>
-          {sauce.map((sauce, id) => (
+          {sauceType.map((sauce, id) => (
             <li
               key={id}
               onClick={() => setActiveId(id)}
