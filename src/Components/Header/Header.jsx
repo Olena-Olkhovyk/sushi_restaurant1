@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 const Header = () => {
   const { items, totalPrice } = useSelector((state) => state.cart);
+  const totalItems = items.reduce((sum, item) => sum + item.count, 0);
   return (
     <div className={styles.Header}>
       <div className={styles.logoImg}>
@@ -19,7 +20,7 @@ const Header = () => {
         </Link>
         <Link to="/cart" className={styles.cart}>
           <i className="fa-solid fa-cart-shopping"></i>
-          {items.length}
+          {totalItems}
         </Link>
       </div>
     </div>
