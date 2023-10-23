@@ -6,6 +6,7 @@ import CartItem from "./CartItem";
 
 const CartBlock = () => {
   const { items, totalPrice } = useSelector((state) => state.cart);
+  const totalItems = items.reduce((sum, item) => sum + item.count, 0);
   return (
     <div className={classes.cartBlock}>
       <div className={classes.cartHeader}>
@@ -23,7 +24,7 @@ const CartBlock = () => {
       </div>
       <div className={classes.orderDetails}>
         <p>
-          Total items:<span>{items.length}</span>
+          Total items:<span>{totalItems}</span>
         </p>
         <p>
           Total cost:<span>{totalPrice}$</span>
