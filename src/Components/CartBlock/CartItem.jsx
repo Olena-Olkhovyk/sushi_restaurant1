@@ -1,4 +1,4 @@
-import { addItem, minusItem } from "../../redux/slices/cartSlice";
+import { addItem, minusItem, removeItem } from "../../redux/slices/cartSlice";
 import classes from "./CartBlock.module.css";
 import { useDispatch } from "react-redux";
 
@@ -10,6 +10,12 @@ const CartItem = ({ id, image, title, price, sauce, count }) => {
   const handlePlusItem = () => {
     dispatch(addItem({ id }));
   };
+  const handleRemoveItem = () => {
+    if (window.confirm("Are you sure you want to delete this item?")) {
+      dispatch(removeItem(id));
+    }
+  };
+
   return (
     <>
       <div className={classes.itemInfo}>
@@ -28,7 +34,10 @@ const CartItem = ({ id, image, title, price, sauce, count }) => {
       </div>
       <div className={classes.price}>{price}$</div>
       <div className={classes.deleteItem}>
-        <i className="fa-regular fa-circle-xmark"></i>
+        <i
+          onClick={handleRemoveItem}
+          className="fa-regular fa-circle-xmark"
+        ></i>
       </div>
     </>
   );

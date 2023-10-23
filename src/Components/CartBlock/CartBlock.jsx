@@ -1,12 +1,23 @@
 import React from "react";
 import classes from "./CartBlock.module.css";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { clearItem } from "../../redux/slices/cartSlice";
 import CartItem from "./CartItem";
+import NotFound from "../NotFoundBlock";
 
 const CartBlock = () => {
   const { items, totalPrice } = useSelector((state) => state.cart);
   const totalItems = items.reduce((sum, item) => sum + item.count, 0);
+  const dispatch = useDispatch();
+  const deleteAllItems = () => {
+    if (window.confirm("Are you sure you want to delete all items?")) {
+      dispatch(clearItem());
+    }
+  };
+  if (totalPrice === 0) {
+    return <NotFound />;
+  }
   return (
     <div className={classes.cartBlock}>
       <div className={classes.cartHeader}>
@@ -14,7 +25,7 @@ const CartBlock = () => {
           <i className="fa-solid fa-cart-shopping"></i>Your Cart
         </h2>
       </div>
-      <p className={classes.deleteAll}>
+      <p onClick={deleteAllItems} className={classes.deleteAll}>
         <i className="fa-solid fa-trash"></i>Delete all
       </p>
       <div className={classes.cartContainer}>
