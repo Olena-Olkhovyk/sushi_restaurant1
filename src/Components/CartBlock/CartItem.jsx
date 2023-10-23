@@ -1,5 +1,15 @@
+import { addItem, minusItem } from "../../redux/slices/cartSlice";
 import classes from "./CartBlock.module.css";
+import { useDispatch } from "react-redux";
+
 const CartItem = ({ id, image, title, price, sauce, count }) => {
+  const dispatch = useDispatch();
+  const handleMinusItem = () => {
+    dispatch(minusItem(id));
+  };
+  const handlePlusItem = () => {
+    dispatch(addItem({ id }));
+  };
   return (
     <>
       <div className={classes.itemInfo}>
@@ -8,9 +18,13 @@ const CartItem = ({ id, image, title, price, sauce, count }) => {
         <p className={classes.sauseInfo}>{sauce}</p>
       </div>
       <div className={classes.itemAmount}>
-        <button className={classes.minus}>-</button>
+        <button onClick={handleMinusItem} className={classes.minus}>
+          -
+        </button>
         <p>{count}</p>
-        <button className={classes.plus}>+</button>
+        <button onClick={handlePlusItem} className={classes.plus}>
+          +
+        </button>
       </div>
       <div className={classes.price}>{price}$</div>
       <div className={classes.deleteItem}>
