@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { clearItem } from "../../redux/slices/cartSlice";
 import CartItem from "./CartItem";
-import NotFound from "../NotFoundBlock";
+import EmptyCart from "../EmptyCart";
 
 const CartBlock = () => {
   const { items, totalPrice } = useSelector((state) => state.cart);
@@ -16,7 +16,7 @@ const CartBlock = () => {
     }
   };
   if (totalPrice === 0) {
-    return <NotFound />;
+    return <EmptyCart />;
   }
   return (
     <div className={classes.cartBlock}>
