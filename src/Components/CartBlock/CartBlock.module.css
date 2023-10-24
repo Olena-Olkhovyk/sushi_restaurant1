@@ -16,6 +16,7 @@ h2 {
 }
 .project {
   display: flex;
+  justify-content: space-between;
 }
 .shop {
   flex: 75%;
@@ -87,8 +88,7 @@ h2 {
   cursor: pointer;
 }
 .rightBar {
-  flex: 25%;
-  margin-left: 300px;
+  width: 350px;
   padding: 20px;
   height: 350px;
   border-radius: 5px;
@@ -100,7 +100,7 @@ h2 {
 }
 .rightBar p {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   margin-bottom: 30px;
   font-size: 20px;
 }
@@ -130,4 +130,41 @@ h2 {
 .orderNow:hover,
 .backHome:hover {
   background-color: rgba(128, 128, 128, 0.242);
+}
+@media screen and (max-width: 747px) {
+  .project {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 800px) {
+  .content h3 {
+    margin-bottom: 15px;
+  }
+  .content p {
+    margin-bottom: 20px;
+  }
+  .box {
+    height: 100px;
+    width: 95%;
+  }
+  .box img {
+    width: 160px;
+    height: 150px;
+  }
+  .rightBar {
+    padding: 5px;
+  }
+}
+@media screen and (max-width: 950px) {
+  .rightBar {
+    margin-left: 10px;
+    margin-bottom: 20px;
+    width: 300px;
+    padding: 10px;
+    height: 350px;
+  }
+  .box {
+    height: 150px;
+    width: 110%;
+  }
 }
