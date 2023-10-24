@@ -17,29 +17,28 @@ const CartItem = ({ id, image, title, price, sauce, count }) => {
   };
 
   return (
-    <>
-      <div className={classes.itemInfo}>
+    <div className={classes.shop}>
+      <div className={classes.box}>
         <img src={image} className={classes.sushiImg} alt="sushi's item" />
-        <h3>{title}</h3>
-        <p className={classes.sauseInfo}>{sauce}</p>
+        <div className={classes.content}>
+          <h3>{title}</h3>
+          <p className={classes.sauceInfo}>{sauce}</p>
+          <p className={classes.price}>Price: {price}$</p>
+          <span className={classes.removeItemBtn} onClick={handleRemoveItem}>
+            <i className="fa-solid fa-xmark"></i>
+          </span>
+          <span className={classes.itemAmount}>
+            <button onClick={handleMinusItem} className={classes.minus}>
+              -
+            </button>
+            <p>{count}</p>
+            <button onClick={handlePlusItem} className={classes.plus}>
+              +
+            </button>
+          </span>
+        </div>
       </div>
-      <div className={classes.itemAmount}>
-        <button onClick={handleMinusItem} className={classes.minus}>
-          -
-        </button>
-        <p>{count}</p>
-        <button onClick={handlePlusItem} className={classes.plus}>
-          +
-        </button>
-      </div>
-      <div className={classes.price}>{price}$</div>
-      <div className={classes.deleteItem}>
-        <i
-          onClick={handleRemoveItem}
-          className="fa-regular fa-circle-xmark"
-        ></i>
-      </div>
-    </>
+    </div>
   );
 };
 export default CartItem;

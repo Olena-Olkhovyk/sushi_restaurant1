@@ -20,34 +20,38 @@ const CartBlock = () => {
   }
   return (
     <div className={classes.cartBlock}>
-      <div className={classes.cartHeader}>
-        <h2>
-          <i className="fa-solid fa-cart-shopping"></i>Your Cart
-        </h2>
-      </div>
+      <h2>
+        <i className="fa-solid fa-cart-shopping"></i>Your Cart
+      </h2>
       <p onClick={deleteAllItems} className={classes.deleteAll}>
         <i className="fa-solid fa-trash"></i>Delete all
       </p>
-      <div className={classes.cartContainer}>
-        {items.map((item) => (
-          <CartItem key={item.id} {...item} />
-        ))}
-      </div>
-      <div className={classes.orderDetails}>
-        <p>
-          Total items:<span>{totalItems}</span>
-        </p>
-        <p>
-          Total cost:<span>{totalPrice}$</span>
-        </p>
-      </div>
-      <div className={classes.bottomButtons}>
-        <Link to="/" className={classes.backHome}>
-          <i className="fa-solid fa-chevron-left"></i> Back to home
-        </Link>
-        <Link to="" className={classes.orderNow}>
-          Order now
-        </Link>
+      <div className={classes.project}>
+        <div className={classes.cartContainer}>
+          {items.map((item) => (
+            <CartItem key={item.id} {...item} />
+          ))}
+        </div>
+        <div className={classes.rightBar}>
+          <p>
+            Total items:<span>{totalItems}</span>
+          </p>
+          <hr />
+          <p>
+            Total cost:<span>{totalPrice}$</span>
+          </p>
+          <hr />
+          <p>
+            Shipping:<span>0$</span>
+          </p>
+          <hr />
+          <Link to="" className={classes.orderNow}>
+            Checkout
+          </Link>
+          <Link to="/" className={classes.backHome}>
+            <i className="fa-solid fa-chevron-left"></i> Back to shop
+          </Link>
+        </div>
       </div>
     </div>
   );

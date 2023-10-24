@@ -1,11 +1,6 @@
 .cartBlock {
-  padding: 0 0 70px;
-  font-size: 20px;
-}
-.cartHeader {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 .deleteAll {
   text-align: right;
@@ -16,85 +11,123 @@
   cursor: pointer;
   color: rgb(86, 85, 85);
 }
-.cartContainer {
+h2 {
+  text-align: center;
+}
+.project {
   display: flex;
-  justify-content: space-around;
-  align-items: center;
-  margin-bottom: 1rem;
 }
-.itemInfo {
+.shop {
+  flex: 75%;
+}
+.box {
   display: flex;
-  gap: 4px;
+  width: 125%;
+  height: 150px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  background-color: rgba(128, 128, 128, 0.062);
+  border: 1px solid rgba(128, 128, 128, 0.224);
+  transition: all 0.6s ease;
+  box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
 }
-.sushiImg {
-  width: 100px;
-  height: auto;
+.box:hover {
+  transform: scale(1.02);
 }
-.sauseInfo {
+.box img {
+  width: 200px;
+  height: 150px;
+  object-fit: cover;
+}
+.content {
+  padding: 8px;
   position: relative;
-  right: 126px;
-  bottom: -25px;
-  color: grey;
+  width: 100%;
+}
+.content h3 {
+  margin-bottom: 5px;
+}
+.content p {
+  font-size: 17px;
+}
+.removeItemBtn {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  font-size: 17px;
+  cursor: pointer;
+  border-radius: 50px;
+  color: rgba(0, 0, 0, 0.607);
+  padding: 8px 10px;
+}
+.removeItemBtn:hover {
+  color: black;
+  cursor: pointer;
 }
 .itemAmount {
   display: flex;
   align-items: center;
   gap: 2px;
+  position: absolute;
+  right: 20px;
+  bottom: 10px;
 }
 .minus,
 .plus {
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  border: 1px solid rgba(229, 81, 18, 0.557);
+  border: 1px solid grey;
   background-color: inherit;
 }
 .minus:hover,
 .plus:hover {
-  background-color: rgba(229, 81, 18, 0.557);
+  background-color: rgba(128, 128, 128, 0.537);
   cursor: pointer;
 }
-.deleteItem i:hover {
-  color: grey;
-  cursor: pointer;
+.rightBar {
+  flex: 25%;
+  margin-left: 300px;
+  padding: 20px;
+  height: 350px;
+  border-radius: 5px;
+  background-color: rgba(128, 128, 128, 0.062);
+  box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
 }
-.orderDetails {
+.rightBar hr {
+  margin-bottom: 25px;
+}
+.rightBar p {
   display: flex;
   justify-content: space-between;
-  margin: 0px 90px;
-  margin-top: 2rem;
-}
-.bottomButtons {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 2rem;
-}
-.backHome {
-  background-color: inherit;
-  border: 1px solid rgba(128, 128, 128, 0.393);
-  border-radius: 50px;
-  padding: 10px 15px;
-  font-size: 16px;
-  text-decoration: none;
-  color: black;
-}
-.backHome:hover {
-  cursor: pointer;
-  border: 1px solid black;
-  transition: all 0.5s ease;
+  margin-bottom: 30px;
+  font-size: 20px;
 }
 .orderNow {
-  background-color: rgba(229, 81, 18, 0.557);
-  border: 1px solid rgb(229, 81, 18);
-  border-radius: 50px;
-  color: white;
-  padding: 10px 15px;
-  font-size: 16px;
+  display: block;
+  text-align: center;
+  height: 40px;
+  line-height: 40px;
+  background-color: rgba(128, 128, 128, 0.062);
   text-decoration: none;
+  margin-bottom: 3px;
+  color: black;
+  transition: all 0.6s ease;
+  font-size: 20px;
 }
-.orderNow:hover {
-  background-color: white;
-  color: rgb(229, 81, 18);
-  cursor: pointer;
-  transition: all 0.5s ease;
+.backHome {
+  display: block;
+  color: black;
+  text-align: center;
+  height: 40px;
+  line-height: 40px;
+  background-color: rgba(128, 128, 128, 0.062);
+  text-decoration: none;
+  transition: all 0.6s ease;
+  font-size: 20px;
+}
+.orderNow:hover,
+.backHome:hover {
+  background-color: rgba(128, 128, 128, 0.242);
 }
