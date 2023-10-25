@@ -11,7 +11,6 @@ const Sort = () => {
     const handleClickOutside = (e) => {
       const path = e.composedPath ? e.composedPath() : e.path;
       !path.includes(sortRef.current) && setOpen(false);
-      console.log("hi");
     };
     document.body.addEventListener("click", handleClickOutside);
     return () => document.body.removeEventListener("click", handleClickOutside);
