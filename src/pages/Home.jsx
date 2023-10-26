@@ -25,20 +25,28 @@ const Home = () => {
   };
   //FILTER CATEGORIES from redux
 
-  React.useEffect(() => {
+  const fetchSushi = async () => {
     const category = categoryId > 0 ? `category=${categoryId}` : "";
     const sort = sortType;
     const search = searchValue ? `&search=${searchValue}` : "";
     setIsLoading(true);
-    axios
-      .get(
+    try {
+      const res = await axios.get(
         `https://651ee1a444a3a8aa476925cf.mockapi.io/sushi?${category}&sortBy=${sort}&order=asc${search}`
-      )
-      .then((res) => {
-        setItem(res.data);
-        setIsLoading(false);
-      });
+      );
+      setItem(res.data);
+      setIsLoading(false);
+    } catch (error) {
+      console.log(error.message);
+      alert("Error while retrieving products");
+      setIsLoading(false);
+    }
+
     window.scrollTo(0, 0);
+  };
+
+  React.useEffect(() => {
+    fetchSushi();
   }, [categoryId, sortType, searchValue]);
 
   const itemsPerPage = 4;
