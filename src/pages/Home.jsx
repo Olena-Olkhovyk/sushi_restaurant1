@@ -9,15 +9,16 @@ import Items from "../Components/Items/Items";
 import Skeleton from "../Components/Items/Skeleton";
 import Pagination from "../Components/pagination/Pagination";
 import { setCategoryId } from "../redux/slices/filterSlice";
+import { setItem } from "../redux/slices/sushiSlice";
 import { SearchContext } from "../App";
 
 const Home = () => {
-  const [item, setItem] = React.useState([]);
   const [currentPage, setCurrentPage] = React.useState(1);
   const [isLoading, setIsLoading] = useState(true);
   const { searchValue } = React.useContext(SearchContext);
   //FILTER CATEGORIES from redux
   const { categoryId, sort } = useSelector((state) => state.filter);
+  const item = useSelector((state) => state.sushi.items);
   const sortType = sort.sortProperty;
   const dispatch = useDispatch();
   const onClickCategory = (id) => {
@@ -31,10 +32,10 @@ const Home = () => {
     const search = searchValue ? `&search=${searchValue}` : "";
     setIsLoading(true);
     try {
-      const res = await axios.get(
+      const { data } = await axios.get(
         `https://651ee1a444a3a8aa476925cf.mockapi.io/sushi?${category}&sortBy=${sort}&order=asc${search}`
       );
-      setItem(res.data);
+      dispatch(setItem(data));
       setIsLoading(false);
     } catch (error) {
       console.log(error.message);
