@@ -9,16 +9,17 @@ import Items from "../Components/Items/Items";
 import Skeleton from "../Components/Items/Skeleton";
 import Pagination from "../Components/pagination/Pagination";
 import { setCategoryId } from "../redux/slices/filterSlice";
-import { setItem } from "../redux/slices/sushiSlice";
+import { fetchSushi } from "../redux/slices/sushiSlice";
 import { SearchContext } from "../App";
 
 const Home = () => {
-  const [currentPage, setCurrentPage] = React.useState(1);
-  const [isLoading, setIsLoading] = useState(true);
+  //const [currentPage, setCurrentPage] = React.useState(1);
+  //const [isLoading, setIsLoading] = useState(true);
   const { searchValue } = React.useContext(SearchContext);
   //FILTER CATEGORIES from redux
   const { categoryId, sort } = useSelector((state) => state.filter);
   const item = useSelector((state) => state.sushi.items);
+  const status = useSelector((state) => state.sushi);
   const sortType = sort.sortProperty;
   const dispatch = useDispatch();
   const onClickCategory = (id) => {
@@ -26,38 +27,35 @@ const Home = () => {
   };
   //FILTER CATEGORIES from redux
 
-  const fetchSushi = async () => {
+  const getSushi = async () => {
     const category = categoryId > 0 ? `category=${categoryId}` : "";
     const sort = sortType;
     const search = searchValue ? `&search=${searchValue}` : "";
-    setIsLoading(true);
-    try {
-      const { data } = await axios.get(
-        `https://651ee1a444a3a8aa476925cf.mockapi.io/sushi?${category}&sortBy=${sort}&order=asc${search}`
-      );
-      dispatch(setItem(data));
-      setIsLoading(false);
-    } catch (error) {
-      console.log(error.message);
-      alert("Error while retrieving products");
-      setIsLoading(false);
-    }
+    //setIsLoading(true);
+
+    dispatch(
+      fetchSushi({
+        category,
+        sort,
+        search,
+      })
+    );
 
     window.scrollTo(0, 0);
   };
 
   React.useEffect(() => {
-    fetchSushi();
+    getSushi();
   }, [categoryId, sortType, searchValue]);
 
-  const itemsPerPage = 4;
-  //How many pages will be displayed on page
-  const numberOfTotalPages = Math.ceil(item.length / itemsPerPage);
-  //Turn number of pages(4) to array
+  // const itemsPerPage = 4;
+  // //How many pages will be displayed on page
+  // const numberOfTotalPages = Math.ceil(item.length / itemsPerPage);
+  // //Turn number of pages(4) to array
 
-  const indexOfLastElem = currentPage * itemsPerPage;
-  const indexofFirstElement = indexOfLastElem - itemsPerPage;
-  const visibleitems = item.slice(indexofFirstElement, indexOfLastElem);
+  // const indexOfLastElem = currentPage * itemsPerPage;
+  // const indexofFirstElement = indexOfLastElem - itemsPerPage;
+  // const visibleitems = item.slice(indexofFirstElement, indexOfLastElem);
 
   return (
     <>
@@ -72,16 +70,15 @@ const Home = () => {
         />
       </div>
       <div className="items-container">
-        <Pagination
-          currentPage={currentPage}
-          numberOfTotalPages={numberOfTotalPages}
-          setCurrentPage={setCurrentPage}
-        />
-        <article className="itemCard">
-          {isLoading
-            ? [...new Array(8)].map((_, i) => <Skeleton key={i} />)
-            : visibleitems.map((item) => <Items key={item.id} {...item} />)}
-        </article>
+        {status === "error" ? (
+          <span>{status.error.message}</span>
+        ) : (
+          <article className="itemCard">
+            {status === "loading"
+              ? [...new Array(8)].map((_, i) => <Skeleton key={i} />)
+              : item.map((item) => <Items key={item.id} {...item} />)}
+          </article>
+        )}
       </div>
     </>
   );
