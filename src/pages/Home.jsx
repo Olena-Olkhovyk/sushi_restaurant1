@@ -13,9 +13,12 @@ import { fetchSushi } from "../redux/slices/sushiSlice";
 import { SearchContext } from "../App";
 
 const Home = () => {
-  const { searchValue } = React.useContext(SearchContext);
+  // const searchValue = useSelector((state) => state.searchValue);
+  // const { searchValue } = React.useContext(SearchContext);
   //FILTER CATEGORIES from redux
-  const { categoryId, sort } = useSelector((state) => state.filter);
+  const { categoryId, sort, searchValue } = useSelector(
+    (state) => state.filter
+  );
   const { items, status } = useSelector((state) => state.sushi);
   const sortType = sort.sortProperty;
   const dispatch = useDispatch();
