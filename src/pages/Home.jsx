@@ -18,8 +18,9 @@ const Home = () => {
   const { searchValue } = React.useContext(SearchContext);
   //FILTER CATEGORIES from redux
   const { categoryId, sort } = useSelector((state) => state.filter);
-  const item = useSelector((state) => state.sushi.items);
-  const status = useSelector((state) => state.sushi);
+  // const items = useSelector((state) => state.sushi.items);
+  // const status = useSelector((state) => state.sushi.status);
+  const { items, status } = useSelector((state) => state.sushi);
   const sortType = sort.sortProperty;
   const dispatch = useDispatch();
   const onClickCategory = (id) => {
@@ -71,12 +72,12 @@ const Home = () => {
       </div>
       <div className="items-container">
         {status === "error" ? (
-          <span>{status.error.message}</span>
+          <span>Sorry</span>
         ) : (
           <article className="itemCard">
             {status === "loading"
               ? [...new Array(8)].map((_, i) => <Skeleton key={i} />)
-              : item.map((item) => <Items key={item.id} {...item} />)}
+              : items.map((item) => <Items key={item.id} {...item} />)}
           </article>
         )}
       </div>

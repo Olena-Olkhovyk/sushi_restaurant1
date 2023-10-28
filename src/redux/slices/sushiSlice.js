@@ -34,10 +34,9 @@ const sushiSlice = createSlice({
         state.items = action.payload;
         state.status = "success";
       })
-      .addCase(fetchSushi.rejected, (state, action) => {
+      .addCase(fetchSushi.rejected, (state) => {
         state.status = "error";
         state.items = [];
-        state.error = action.error;
       });
   },
 });
