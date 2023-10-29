@@ -1,7 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import axios from "axios";
-
+import { Link } from "react-router-dom";
 import SearchInput from "../Components/Searchinput/SearchInput";
 import FilterCategories from "../Components/Filter/FilterCategories";
 import Sort from "../Components/Sort/Sort";
@@ -10,11 +9,8 @@ import Skeleton from "../Components/Items/Skeleton";
 import Pagination from "../Components/pagination/Pagination";
 import { setCategoryId } from "../redux/slices/filterSlice";
 import { fetchSushi } from "../redux/slices/sushiSlice";
-import { SearchContext } from "../App";
 
 const Home = () => {
-  // const searchValue = useSelector((state) => state.searchValue);
-  // const { searchValue } = React.useContext(SearchContext);
   //FILTER CATEGORIES from redux
   const { categoryId, sort, searchValue } = useSelector(
     (state) => state.filter
@@ -76,7 +72,12 @@ const Home = () => {
           <article className="itemCard">
             {status === "loading"
               ? [...new Array(8)].map((_, i) => <Skeleton key={i} />)
-              : items.map((item) => <Items key={item.id} {...item} />)}
+              : items.map((item) => (
+                  <Link to={`/sushi/${item.id}`} key={item.id}>
+                    {" "}
+                    <Items {...item} />
+                  </Link>
+                ))}
           </article>
         )}
       </div>
