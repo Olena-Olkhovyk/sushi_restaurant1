@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import classes from "./EmptyCart.module.css";
 import emptyCart from "../../assets/images/emptyCart.webp";
 
@@ -11,6 +12,9 @@ const EmptyCart = () => {
         To order sushi, go back to the main page.
       </p>
       <img src={emptyCart} alt="empty cart information" />
+      <Link to="/" className={classes.backShopBtn}>
+        <i className="fa-solid fa-chevron-left"></i> Back to shop
+      </Link>
     </div>
   );
 };
