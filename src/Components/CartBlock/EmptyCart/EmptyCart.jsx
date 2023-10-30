@@ -1,6 +1,6 @@
 import React from "react";
-import classes from "./CartBlock.module.css";
-import emptyCart from "../assets/images/emptyCart.webp";
+import classes from "./EmptyCart.module.css";
+import emptyCart from "../../assets/images/emptyCart.webp";
 
 const EmptyCart = () => {
   return (

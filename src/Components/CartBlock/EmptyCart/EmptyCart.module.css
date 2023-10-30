@@ -1,0 +1,26 @@
+.emptyCartBlock {
+  height: 35rem;
+  text-align: center;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+.emptyCartBlock p {
+  color: grey;
+  letter-spacing: 2px;
+}
+.emptyCartBlock img {
+  width: 35%;
+  height: auto;
+}
+.backHomeBtn {
+  color: red;
+}
+@media screen and (max-width: 430px) {
+  .emptyCartBlock {
+    font-size: 15px;
+    height: 20rem;
+  }
+  .emptyCartBlock p {
+    letter-spacing: 1px;
+  }
+}
