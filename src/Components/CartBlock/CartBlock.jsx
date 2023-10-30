@@ -5,7 +5,6 @@ import { useSelector, useDispatch } from "react-redux";
 import { clearItem } from "../../redux/slices/cartSlice";
 import CartItem from "./CartItem";
 import EmptyCart from "./EmptyCart";
-import BackHomeBtn from "./BackHomeBtn";
 import { selectCart } from "../../redux/slices/cartSlice";
 
 const CartBlock = () => {
@@ -50,7 +49,9 @@ const CartBlock = () => {
           <Link to="" className={classes.orderNow}>
             Checkout
           </Link>
-          <BackHomeBtn />
+          <Link to="/" className={classes.backHome}>
+            <i className="fa-solid fa-chevron-left"></i> Back to shop
+          </Link>
         </div>
       </div>
     </div>
