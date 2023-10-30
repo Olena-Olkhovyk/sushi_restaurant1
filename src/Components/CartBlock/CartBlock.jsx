@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { clearItem } from "../../redux/slices/cartSlice";
 import CartItem from "./CartItem";
-import EmptyCart from "../EmptyCart";
+import EmptyCart from "./EmptyCart";
 import { selectCart } from "../../redux/slices/cartSlice";
 
 const CartBlock = () => {
