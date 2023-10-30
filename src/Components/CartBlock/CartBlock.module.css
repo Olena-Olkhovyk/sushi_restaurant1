@@ -131,6 +131,33 @@ h2 {
 .backHome:hover {
   background-color: rgba(128, 128, 128, 0.242);
 }
+/* EMPTYCART COMPONENT */
+.emptyCartBlock {
+  height: 30rem;
+  text-align: center;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+.emptyCartBlock p {
+  color: grey;
+  letter-spacing: 2px;
+}
+.emptyCartBlock img {
+  width: 35%;
+  height: auto;
+}
+@media screen and (max-width: 430px) {
+  .emptyCartBlock {
+    font-size: 15px;
+    height: 20rem;
+  }
+  .emptyCartBlock p {
+    letter-spacing: 1px;
+  }
+}
+
+/* EMPTYCART COMPONENT */
+
 @media screen and (max-width: 747px) {
   .project {
     flex-direction: column;
