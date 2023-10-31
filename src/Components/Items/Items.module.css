@@ -13,6 +13,10 @@
 .itemTitle {
   text-align: center;
 }
+.itemTitle:hover {
+  color: rgb(39, 37, 37);
+  text-decoration: underline;
+}
 .sause {
   display: flex;
   justify-content: center;
