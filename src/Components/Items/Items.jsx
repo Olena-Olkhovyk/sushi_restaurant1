@@ -3,6 +3,7 @@ import classes from "./Items.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { addItem } from "../../redux/slices/cartSlice";
 import { selectCartItemById } from "../../redux/slices/cartSlice";
+import { Link } from "react-router-dom";
 
 const sauceType = ["unagi sauce", "teriyaki sauce"];
 
@@ -28,7 +29,9 @@ const Items = ({ id, image, title, price, sauce }) => {
         <img className={classes.itemImg} src={image} />
       </div>
       <div className={classes.description}>
-        <h2 className={classes.itemTitle}>{title}</h2>
+        <Link to={`/sushi/${id}`}>
+          <h2 className={classes.itemTitle}>{title}</h2>
+        </Link>
         <ul className={classes.sause}>
           {sauceType.map((sauce, id) => (
             <li
