@@ -72,12 +72,7 @@ const Home = () => {
           <article className="itemCard">
             {status === "loading"
               ? [...new Array(8)].map((_, i) => <Skeleton key={i} />)
-              : items.map((item) => (
-                  <Link to={`/sushi/${item.id}`} key={item.id}>
-                    {" "}
-                    <Items {...item} />
-                  </Link>
-                ))}
+              : items.map((item) => <Items {...item} key={item.id} />)}
           </article>
         )}
       </div>
