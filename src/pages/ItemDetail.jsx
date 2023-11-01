@@ -15,7 +15,7 @@ const ItemDetail = () => {
         );
         setSushi(data);
       } catch (error) {
-        navigate("/");
+        //navigate("/");
       }
     }
 
