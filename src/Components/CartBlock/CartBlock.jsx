@@ -53,6 +53,17 @@ const CartBlock = () => {
             <i className="fa-solid fa-chevron-left"></i> Back to shop
           </Link>
         </div>
+        <div className={classes.mobileRightBar}>
+          <div className={classes.mobileItemsPrice}>
+            <h2>Total cost:</h2>
+            <h2>{totalPrice}$</h2>
+          </div>
+          <div className={classes.mobileBtnContainer}>
+            <Link to="" className={classes.mobileOrderNow}>
+              Checkout
+            </Link>
+          </div>
+        </div>
       </div>
     </div>
   );
