@@ -31,7 +31,7 @@ const CartItem = ({ id, image, title, price, sauce, count }) => {
             <button onClick={handleMinusItem} className={classes.minus}>
               -
             </button>
-            <p>{count}</p>
+            <span>{count}</span>
             <button onClick={handlePlusItem} className={classes.plus}>
               +
             </button>
