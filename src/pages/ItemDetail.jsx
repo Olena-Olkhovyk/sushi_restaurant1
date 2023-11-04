@@ -26,18 +26,26 @@ const ItemDetail = () => {
   }
   return (
     <>
-      <img src={sushi.image} />
-      <h1>{sushi.title}</h1>
-      <div className={classes.ingredientsBlock}>
-        {[1, 2, 3, 4, 5, 6].map((ingredientIndex) => (
-          <div key={ingredientIndex}>
-            <img
-              src={sushi[`ingredientImg${ingredientIndex}`]}
-              alt={sushi[`ingridientTitle${ingredientIndex}`]}
-            />
-            <p>{sushi[`ingridientTitle${ingredientIndex}`]}</p>
+      <div className={classes.itemDetailBlock}>
+        <div className={classes.itemDetailBlockInfo}>
+          <img src={sushi.image} className={classes.mainImg} />
+          <div className={classes.infoBlock}>
+            <h1>{sushi.title}</h1>
+            <h3>Ingredients</h3>
+            <div className={classes.ingredientsBlock}>
+              {[1, 2, 3, 4, 5, 6].map((ingredientIndex) => (
+                <div key={ingredientIndex}>
+                  <img
+                    src={sushi[`ingredientImg${ingredientIndex}`]}
+                    className={classes.ingridientImg}
+                    alt={sushi[`ingridientTitle${ingredientIndex}`]}
+                  />
+                  <p>{sushi[`ingridientTitle${ingredientIndex}`]}</p>
+                </div>
+              ))}
+            </div>
           </div>
-        ))}
+        </div>
       </div>
     </>
   );
