@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useParams, useNavigate } from "react-router";
 import axios from "axios";
 import classes from "./ItemDetail.module.css";
+import { AddToCartButton } from "../Components/CartBlock/AddToCartBtn";
 
 const ItemDetail = () => {
   const [sushi, setSushi] = useState();
@@ -44,6 +45,13 @@ const ItemDetail = () => {
                 </div>
               ))}
             </div>
+            <AddToCartButton
+              id={sushi.id}
+              image={sushi.image}
+              title={sushi.title}
+              price={sushi.price}
+              sauce={sushi.sauce}
+            />
           </div>
         </div>
       </div>
