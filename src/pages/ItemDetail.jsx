@@ -3,9 +3,12 @@ import { useParams, useNavigate } from "react-router";
 import axios from "axios";
 import classes from "./ItemDetail.module.css";
 import { AddToCartButton } from "../Components/CartBlock/AddToCartBtn";
+import { Sauces } from "../Components/Items/Sauces";
 
+const sauceType = ["unagi sauce", "teriyaki sauce"];
 const ItemDetail = () => {
   const [sushi, setSushi] = useState();
+  const [activeId, setActiveId] = React.useState(0);
   const { id } = useParams();
   const navigate = useNavigate();
   React.useEffect(() => {
@@ -32,6 +35,22 @@ const ItemDetail = () => {
           <img src={sushi.image} className={classes.mainImg} />
           <div className={classes.infoBlock}>
             <h1>{sushi.title}</h1>
+            <Sauces
+              sauceType={sauceType}
+              activeId={activeId}
+              setActiveId={setActiveId}
+            />
+            {/* <ul className={classes.sause}>
+              {sauceType.map((sauce, id) => (
+                <li
+                  key={id}
+                  onClick={() => setActiveId(id)}
+                  className={activeId === id ? classes.active : ""}
+                >
+                  {sauce}
+                </li>
+              ))}
+            </ul> */}
             <h3>Ingredients</h3>
             <div className={classes.ingredientsBlock}>
               {[1, 2, 3, 4, 5, 6].map((ingredientIndex) => (
@@ -50,7 +69,8 @@ const ItemDetail = () => {
               image={sushi.image}
               title={sushi.title}
               price={sushi.price}
-              sauce={sushi.sauce}
+              activeId={activeId}
+              sauceType={sauceType}
             />
           </div>
         </div>

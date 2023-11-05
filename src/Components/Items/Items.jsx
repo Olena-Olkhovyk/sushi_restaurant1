@@ -2,10 +2,11 @@ import React from "react";
 import classes from "./Items.module.css";
 import { Link } from "react-router-dom";
 import { AddToCartButton } from "../CartBlock/AddToCartBtn";
+import { Sauces } from "./Sauces";
 
 const sauceType = ["unagi sauce", "teriyaki sauce"];
 
-const Items = ({ id, image, title, price, sauce }) => {
+const Items = ({ id, image, title, price }) => {
   const [activeId, setActiveId] = React.useState(0);
   return (
     <div className={classes.productContainer}>
@@ -16,7 +17,12 @@ const Items = ({ id, image, title, price, sauce }) => {
         <Link to={`/sushi/${id}`}>
           <h2 className={classes.itemTitle}>{title}</h2>
         </Link>
-        <ul className={classes.sause}>
+        <Sauces
+          sauceType={sauceType}
+          activeId={activeId}
+          setActiveId={setActiveId}
+        />
+        {/* <ul className={classes.sause}>
           {sauceType.map((sauce, id) => (
             <li
               key={id}
@@ -26,7 +32,7 @@ const Items = ({ id, image, title, price, sauce }) => {
               {sauce}
             </li>
           ))}
-        </ul>
+        </ul> */}
         <div className={classes.priceDetails}>
           <span className={classes.price}>${price}</span>
           <AddToCartButton
