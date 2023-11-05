@@ -19,7 +19,7 @@ const CartItem = ({ id, image, title, price, sauce, count }) => {
   return (
     <div className={classes.shop}>
       <div className={classes.box}>
-        <img src={image} className={classes.sushiImg} alt="sushi's item" />
+        <img src={image} className={classes.sushiImg} alt={title} />
         <div className={classes.content}>
           <h3>{title}</h3>
           <p className={classes.sauceInfo}>{sauce}</p>
