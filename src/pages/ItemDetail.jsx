@@ -38,7 +38,7 @@ const ItemDetail = () => {
             alt={sushi.title}
           />
           <div className={classes.infoBlock}>
-            <h1>{sushi.title}</h1>
+            <h1 className={classes.title}>{sushi.title}</h1>
             <Sauces
               sauceType={sauceType}
               activeId={activeId}
