@@ -46,6 +46,7 @@ const ItemDetail = () => {
               activeId={activeId}
               setActiveId={setActiveId}
             />
+            <h2>{sushi.price}$</h2>
             <AddToCartButton
               id={sushi.id}
               image={sushi.image}
