@@ -1,3 +1,8 @@
 .itemDetailBlock {
   max-height: 1000px;
 }
+.itemDetailBlockInfo {
+  display: flex;
+  gap: 5px;
+  margin: 20px;
+}
