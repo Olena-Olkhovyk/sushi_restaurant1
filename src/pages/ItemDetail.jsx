@@ -44,19 +44,6 @@ const ItemDetail = () => {
               activeId={activeId}
               setActiveId={setActiveId}
             />
-            <h3>Ingredients</h3>
-            <div className={classes.ingredientsBlock}>
-              {[1, 2, 3, 4, 5, 6].map((ingredientIndex) => (
-                <div key={ingredientIndex}>
-                  <img
-                    src={sushi[`ingredientImg${ingredientIndex}`]}
-                    className={classes.ingridientImg}
-                    alt={sushi[`ingridientTitle${ingredientIndex}`]}
-                  />
-                  <p>{sushi[`ingridientTitle${ingredientIndex}`]}</p>
-                </div>
-              ))}
-            </div>
             <AddToCartButton
               id={sushi.id}
               image={sushi.image}
@@ -66,6 +53,19 @@ const ItemDetail = () => {
               sauceType={sauceType}
             />
           </div>
+        </div>
+        <h3 className={classes.ingridientsTitle}>Ingredients</h3>
+        <div className={classes.ingredientsBlock}>
+          {[1, 2, 3, 4, 5, 6].map((ingredientIndex) => (
+            <div key={ingredientIndex}>
+              <img
+                src={sushi[`ingredientImg${ingredientIndex}`]}
+                className={classes.ingridientImg}
+                alt={sushi[`ingridientTitle${ingredientIndex}`]}
+              />
+              <p>{sushi[`ingridientTitle${ingredientIndex}`]}</p>
+            </div>
+          ))}
         </div>
       </div>
     </>
