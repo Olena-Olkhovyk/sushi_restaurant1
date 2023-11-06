@@ -44,3 +44,35 @@
   width: 80px;
   height: auto;
 }
+@media screen and (max-width: 1158px) {
+  .title {
+    margin-bottom: 10px;
+  }
+}
+@media screen and (max-width: 1063px) {
+  .itemDetailBlockInfo {
+    flex-direction: column;
+    gap: 0;
+    margin: 15px;
+  }
+  .mainImgContain {
+    width: 100%;
+    min-width: 80px;
+  }
+  .mainImg {
+    width: 100%;
+  }
+  .infoBlock {
+    margin: 0 auto;
+    width: 88%;
+    min-width: 100px;
+  }
+  .ingredientsBlock {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .ingridientsTitle {
+    text-align: center;
+  }
+}
