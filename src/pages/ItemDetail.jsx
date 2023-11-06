@@ -44,17 +44,6 @@ const ItemDetail = () => {
               activeId={activeId}
               setActiveId={setActiveId}
             />
-            {/* <ul className={classes.sause}>
-              {sauceType.map((sauce, id) => (
-                <li
-                  key={id}
-                  onClick={() => setActiveId(id)}
-                  className={activeId === id ? classes.active : ""}
-                >
-                  {sauce}
-                </li>
-              ))}
-            </ul> */}
             <h3>Ingredients</h3>
             <div className={classes.ingredientsBlock}>
               {[1, 2, 3, 4, 5, 6].map((ingredientIndex) => (

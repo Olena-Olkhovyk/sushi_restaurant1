@@ -22,17 +22,6 @@ const Items = ({ id, image, title, price }) => {
           activeId={activeId}
           setActiveId={setActiveId}
         />
-        {/* <ul className={classes.sause}>
-          {sauceType.map((sauce, id) => (
-            <li
-              key={id}
-              onClick={() => setActiveId(id)}
-              className={activeId === id ? classes.active : ""}
-            >
-              {sauce}
-            </li>
-          ))}
-        </ul> */}
         <div className={classes.priceDetails}>
           <span className={classes.price}>${price}</span>
           <AddToCartButton
