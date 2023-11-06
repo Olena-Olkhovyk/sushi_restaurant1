@@ -32,11 +32,13 @@ const ItemDetail = () => {
     <>
       <div className={classes.itemDetailBlock}>
         <div className={classes.itemDetailBlockInfo}>
-          <img
-            src={sushi.image}
-            className={classes.mainImg}
-            alt={sushi.title}
-          />
+          <div className={classes.mainImgContain}>
+            <img
+              src={sushi.image}
+              className={classes.mainImg}
+              alt={sushi.title}
+            />
+          </div>
           <div className={classes.infoBlock}>
             <h1 className={classes.title}>{sushi.title}</h1>
             <Sauces
