@@ -24,7 +24,10 @@
 }
 .title {
   letter-spacing: 2px;
+}
+.weight {
   margin-bottom: 70px;
+  color: grey;
 }
 .ingridientsTitle {
   margin-left: 20px;

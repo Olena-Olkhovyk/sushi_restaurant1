@@ -41,6 +41,7 @@ const ItemDetail = () => {
           </div>
           <div className={classes.infoBlock}>
             <h1 className={classes.title}>{sushi.title}</h1>
+            <h2 className={classes.weight}>{sushi.weight}g</h2>
             <Sauces
               sauceType={sauceType}
               activeId={activeId}
