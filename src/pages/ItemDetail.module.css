@@ -26,3 +26,21 @@
   letter-spacing: 2px;
   margin-bottom: 70px;
 }
+.ingridientsTitle {
+  margin-left: 20px;
+  letter-spacing: 2px;
+}
+.ingredientsBlock {
+  width: 44%;
+  min-width: 350px;
+  margin: 20px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.ingridientImg {
+  width: 80px;
+  height: auto;
+}
