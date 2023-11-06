@@ -6,3 +6,11 @@
   gap: 5px;
   margin: 20px;
 }
+.mainImgContain {
+  width: 55%;
+  min-width: 350px;
+}
+.mainImg {
+  width: 90%;
+  height: auto;
+}
