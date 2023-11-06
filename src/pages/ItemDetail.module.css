@@ -14,3 +14,15 @@
   width: 90%;
   height: auto;
 }
+.infoBlock {
+  width: 45%;
+  min-width: 270px;
+  min-height: auto;
+  text-align: center;
+  padding: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.297);
+}
+.title {
+  letter-spacing: 2px;
+  margin-bottom: 70px;
+}
