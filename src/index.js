@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { store } from "./redux/store";
 import { Provider } from "react-redux";
 
+import Checkout from "./pages/Checkout";
 import App from "./App";
 import NotFound from "./Components/NotFoundBlock";
 import Cart from "./pages/Cart";
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
       {
         path: "/sushi/:id",
         element: <ItemDetail />,
+      },
+      {
+        path: "/checkout",
+        element: <Checkout />,
       },
     ],
   },

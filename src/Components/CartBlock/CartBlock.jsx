@@ -45,7 +45,7 @@ const CartBlock = () => {
             Shipping:<span>0$</span>
           </p>
           <hr />
-          <Link to="" className={classes.orderNow}>
+          <Link to="/checkout" className={classes.orderNow}>
             Checkout
           </Link>
           <Link to="/" className={classes.backHome}>
@@ -58,7 +58,7 @@ const CartBlock = () => {
             <h2>{totalPrice}$</h2>
           </div>
           <div className={classes.mobileBtnContainer}>
-            <Link to="" className={classes.mobileOrderNow}>
+            <Link to="/checkout" className={classes.mobileOrderNow}>
               Checkout
             </Link>
           </div>
