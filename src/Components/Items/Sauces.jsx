@@ -1,4 +1,3 @@
-import React from "react";
 import classes from "./Items.module.css";
 
 export const Sauces = ({ sauceType, activeId, setActiveId }) => {

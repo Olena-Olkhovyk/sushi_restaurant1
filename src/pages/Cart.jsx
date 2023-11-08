@@ -1,4 +1,3 @@
-import React from "react";
 import CartBlock from "../Components/CartBlock/CartBlock";
 
 const Cart = () => {

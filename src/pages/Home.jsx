@@ -1,6 +1,5 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
 import SearchInput from "../Components/Searchinput/SearchInput";
 import FilterCategories from "../Components/Filter/FilterCategories";
 import Sort from "../Components/Sort/Sort";

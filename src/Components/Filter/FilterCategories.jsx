@@ -1,4 +1,3 @@
-import React from "react";
 import classes from "./FilterCategories.module.css";
 
 const FilterCategories = ({ categoryId, onClickCategory }) => {

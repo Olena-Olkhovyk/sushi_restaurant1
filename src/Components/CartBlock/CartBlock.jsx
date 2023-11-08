@@ -1,4 +1,3 @@
-import React from "react";
 import classes from "./CartBlock.module.css";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";

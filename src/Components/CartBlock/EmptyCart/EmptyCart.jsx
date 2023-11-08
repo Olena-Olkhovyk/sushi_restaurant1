@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import classes from "./EmptyCart.module.css";
 import emptyCart from "../../assets/images/emptyCart.webp";
