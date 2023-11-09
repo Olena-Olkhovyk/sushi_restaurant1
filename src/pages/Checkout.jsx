@@ -26,12 +26,46 @@ export const Checkout = () => {
 
   return (
     <form ref={form} onSubmit={sendEmail}>
-      <label>Name</label>
-      <input type="text" name="user_name" />
-      <label>Email</label>
-      <input type="email" name="user_email" />
-      <label>Message</label>
-      <textarea name="message" />
+      <div className={classes.formGroup}>
+        <input
+          type="text"
+          required
+          className={classes.fieldInp}
+          name="user_name"
+        />
+        <label>Name and Surname</label>
+      </div>
+      <div className={classes.formGroup}>
+        <input
+          type="text"
+          required
+          className={classes.fieldInp}
+          name="user_email"
+        />
+        <label>Email</label>
+      </div>
+      <div className={classes.formGroup}>
+        <input
+          type="number"
+          required
+          className={classes.fieldInp}
+          name="user_phone"
+        />
+        <label>Phone</label>
+      </div>
+      <div className={classes.formGroup}>
+        <input
+          type="text"
+          required
+          className={classes.fieldInp}
+          name="user_address"
+        />
+        <label>Address(street, house)</label>
+      </div>
+      <div className={classes.formGroup}>
+        <textarea required name="message" className={classes.fieldInp} />
+        <label>Special wishes</label>
+      </div>
       <input type="submit" value="Send" />
     </form>
   );
