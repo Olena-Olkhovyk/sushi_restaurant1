@@ -66,7 +66,10 @@ const Home = () => {
       </div>
       <div className="items-container">
         {status === "error" ? (
-          <span>Sorry</span>
+          <h4>
+            We're currently experiencing a high volume of requests. Please try
+            again in a moment.
+          </h4>
         ) : (
           <article className="itemCard">
             {status === "loading"
