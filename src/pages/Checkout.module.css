@@ -1,0 +1,66 @@
+.checkoutContainer {
+  min-height: 600px;
+}
+form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f8d6c580;
+}
+.formGroup {
+  position: relative;
+  margin-bottom: 20px;
+}
+.fieldInp {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.fieldInp:focus {
+  outline: red;
+}
+.fieldInp:focus + label,
+.fieldInp:valid + label {
+  top: -10px;
+  font-size: 17px;
+  background-color: white;
+  color: black;
+  transition: top 0.3s ease, font-size 0.3s ease, color 0.3s ease;
+}
+
+label {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 16px;
+  color: #777;
+  pointer-events: none;
+  transition: top 0.3s ease, font-size 0.3s ease, color 0.3s ease;
+}
+textarea {
+  resize: none;
+}
+input[type="submit"] {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #ce6835c9;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+  background-color: #ce6835ef;
+}
+
+@media screen and (max-width: 480px) {
+  form {
+    max-width: 350px;
+    margin: 20px;
+  }
+}
