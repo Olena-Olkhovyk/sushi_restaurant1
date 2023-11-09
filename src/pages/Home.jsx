@@ -8,6 +8,7 @@ import Skeleton from "../Components/Items/Skeleton";
 import Pagination from "../Components/pagination/Pagination";
 import { setCategoryId } from "../redux/slices/filterSlice";
 import { fetchSushi } from "../redux/slices/sushiSlice";
+import Error from "./Error";
 
 const Home = () => {
   //FILTER CATEGORIES from redux
@@ -66,10 +67,7 @@ const Home = () => {
       </div>
       <div className="items-container">
         {status === "error" ? (
-          <h4>
-            We're currently experiencing a high volume of requests. Please try
-            again in a moment.
-          </h4>
+          <Error />
         ) : (
           <article className="itemCard">
             {status === "loading"
