@@ -27,6 +27,7 @@ export const Checkout = () => {
 
   return (
     <div className={classes.checkoutContainer}>
+      <h2>To confirm your order, please submit the form</h2>
       <form ref={form} onSubmit={sendEmail}>
         <div className={classes.formGroup}>
           <input
