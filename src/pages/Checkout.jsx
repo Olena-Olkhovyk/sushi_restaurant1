@@ -16,8 +16,10 @@ export const Checkout = () => {
         "zfKxXG29IG1WazDNd"
       )
       .then(
-        (result) => {
-          alert(result.text);
+        () => {
+          alert(
+            "Thank you for your order! We will deliver the sushi as quickly as possible."
+          );
         },
         (error) => {
           alert("There is an " + error);
