@@ -20,7 +20,7 @@ export const Checkout = () => {
           alert(result.text);
         },
         (error) => {
-          console.log(error.text);
+          alert("There is an " + error);
         }
       );
   };
