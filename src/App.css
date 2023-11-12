@@ -9,11 +9,12 @@ body {
 }
 .itemCard {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 20px;
   margin: 0 auto;
   max-width: 1200px;
   padding: 0 15px;
+  min-width: 260px;
 }
 a {
   text-decoration: none;
