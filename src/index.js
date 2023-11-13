@@ -10,6 +10,7 @@ import NotFound from "./Components/NotFoundBlock";
 import Cart from "./pages/Cart";
 import Home from "./pages/Home";
 import ItemDetail from "./pages/ItemDetail";
+import WelcomePage from "./Components/WelcomePage/WelcomePage";
 
 const router = createBrowserRouter([
   {
@@ -22,8 +23,12 @@ const router = createBrowserRouter([
     ),
     children: [
       {
-        element: <Home />,
+        element: <WelcomePage />,
         index: true,
+      },
+      {
+        path: "/home",
+        element: <Home />,
       },
       {
         path: "/cart",
