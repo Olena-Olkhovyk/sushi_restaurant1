@@ -28,7 +28,8 @@ b,
 }
 .options {
   text-decoration: dotted;
-  color: rgba(229, 81, 18, 0.557);
+  color: rgba(229, 81, 18, 0.865);
+  z-index: 3;
 }
 .options:hover {
   cursor: pointer;

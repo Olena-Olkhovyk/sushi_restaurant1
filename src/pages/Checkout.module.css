@@ -1,13 +1,17 @@
 .checkoutContainer {
   min-height: 600px;
 }
+.checkoutContainer h2 {
+  margin-top: 2rem;
+}
 form {
   max-width: 400px;
+  position: relative;
   margin: 0 auto;
   padding: 20px;
   border: 1px solid #ddd;
   border-radius: 5px;
-  background-color: #f8d6c580;
+  background-color: white;
 }
 .formGroup {
   position: relative;

@@ -29,7 +29,7 @@ h2 {
   margin-bottom: 20px;
   margin-left: 8px;
   border-radius: 5px;
-  background-color: rgba(128, 128, 128, 0.062);
+  background-color: white;
   border: 1px solid rgba(128, 128, 128, 0.224);
   transition: all 0.6s ease;
   box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
@@ -97,7 +97,7 @@ h2 {
   height: 350px;
   margin-right: 10px;
   border-radius: 5px;
-  background-color: rgba(128, 128, 128, 0.062);
+  background-color: white;
   box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
 }
 .rightBar hr {
@@ -150,16 +150,20 @@ h2 {
   }
   .mobileRightBar {
     display: block;
-    width: 98%;
+    /* width: 110%; */
     height: 150px;
   }
   .mobileItemsPrice {
     display: flex;
     justify-content: space-around;
+    background-color: rgba(255, 255, 255, 0.139);
+    width: 100%;
+    margin: 5px;
   }
   .mobileBtnContainer {
     position: relative;
-    left: 5%;
+    width: 100%;
+    /* left: 5%; */
     margin: 5px;
   }
   .mobileOrderNow {
