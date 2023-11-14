@@ -1,26 +1,52 @@
 .listWrapper {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: center;
+  background-color: white;
+  position: fixed;
   margin-top: 5rem;
+  z-index: 999;
+  border-radius: 5px;
+  top: 15rem;
+  bottom: 0;
+  left: 10px;
+  padding: 12px 15px;
+  z-index: 1;
+  overflow-y: auto;
+  max-height: 592px;
+}
+.listWrapper::-webkit-scrollbar {
+  width: 0;
 }
 .listWrapper li {
   list-style: none;
-  font-size: 20px;
-  background-color: rgba(0, 0, 0, 0.11);
+  font-size: 15px;
   color: black;
-  padding: 10px 17px;
+  padding: 5px 8px;
   font-weight: 700;
-  border-radius: 50%;
   transition: all 0.5s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
 }
 .listWrapper li:hover {
-  background-color: rgba(0, 0, 0, 0.785);
+  color: grey;
   cursor: pointer;
-  color: white;
 }
 li.active {
-  background-color: rgba(0, 0, 0, 0.785);
+  background-color: rgba(229, 81, 18, 0.557);
+  border-radius: 25px;
   color: white;
+}
+@media screen and (max-width: 1233px) {
+  .listWrapper {
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+    position: fixed;
+    bottom: 0;
+    left: auto;
+    top: auto;
+    width: 95%;
+    margin: 0 auto;
+    margin-top: 2rem;
+  }
 }
