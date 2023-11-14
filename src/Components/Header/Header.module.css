@@ -22,11 +22,14 @@
   font-weight: 800;
 }
 .cartInfo {
-  background-color: rgba(229, 81, 18, 0.557);
+  background-color: rgba(229, 81, 18, 0.715);
   border-radius: 40px;
   padding: 10px 30px;
   display: flex;
   gap: 10px;
+}
+.cartInfo:hover {
+  background-color: rgba(229, 81, 18, 0.559);
 }
 .cartInfo a {
   text-decoration: none;
