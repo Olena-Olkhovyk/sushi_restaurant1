@@ -5,12 +5,11 @@
   z-index: 999;
   border-radius: 5px;
   top: 15rem;
-  bottom: 0;
+  bottom: 10px;
   left: 10px;
   padding: 12px 15px;
   z-index: 1;
   overflow-y: auto;
-  max-height: 592px;
 }
 .listWrapper::-webkit-scrollbar {
   width: 0;
