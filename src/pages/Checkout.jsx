@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import React from "react";
 import emailjs from "@emailjs/browser";
 import classes from "./Checkout.module.css";
@@ -7,6 +8,7 @@ import ConfirmMessage from "../Components/ConfirmMessage/ConfirmMessage";
 export const Checkout = () => {
   const form = useRef();
   const [showConfirmation, setShowConfirmation] = React.useState(false);
+  const navigate = useNavigate();
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -21,6 +23,10 @@ export const Checkout = () => {
       .then(
         () => {
           setShowConfirmation(true);
+
+          setTimeout(() => {
+            navigate("/");
+          }, 2500);
         },
         (error) => {
           alert("There is an " + error);
