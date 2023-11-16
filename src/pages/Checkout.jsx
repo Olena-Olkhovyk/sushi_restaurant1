@@ -1,5 +1,8 @@
 import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { clearItem } from "../redux/slices/cartSlice";
+
 import React from "react";
 import emailjs from "@emailjs/browser";
 import classes from "./Checkout.module.css";
@@ -9,6 +12,7 @@ export const Checkout = () => {
   const form = useRef();
   const [showConfirmation, setShowConfirmation] = React.useState(false);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -23,7 +27,7 @@ export const Checkout = () => {
       .then(
         () => {
           setShowConfirmation(true);
-
+          dispatch(clearItem());
           setTimeout(() => {
             navigate("/");
           }, 2500);
