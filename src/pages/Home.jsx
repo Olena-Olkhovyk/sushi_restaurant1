@@ -5,7 +5,6 @@ import FilterCategories from "../Components/Filter/FilterCategories";
 import Sort from "../Components/Sort/Sort";
 import Items from "../Components/Items/Items";
 import Skeleton from "../Components/Items/Skeleton";
-import Pagination from "../Components/pagination/Pagination";
 import { setCategoryId } from "../redux/slices/filterSlice";
 import { fetchSushi } from "../redux/slices/sushiSlice";
 import Error from "./Error";
@@ -43,16 +42,6 @@ const Home = () => {
   React.useEffect(() => {
     getSushi();
   }, [categoryId, sortType, searchValue]);
-
-  // const itemsPerPage = 4;
-  // //How many pages will be displayed on page
-  // const numberOfTotalPages = Math.ceil(item.length / itemsPerPage);
-  // //Turn number of pages(4) to array
-
-  // const indexOfLastElem = currentPage * itemsPerPage;
-  // const indexofFirstElement = indexOfLastElem - itemsPerPage;
-  // const visibleitems = item.slice(indexofFirstElement, indexOfLastElem);
-
   return (
     <>
       <div className="search-container">
