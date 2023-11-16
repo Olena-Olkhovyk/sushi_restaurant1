@@ -1,0 +1,13 @@
+.confirmMessage {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  background-color: white;
+  border: 1px solid grey;
+  box-shadow: rgba(100, 100, 111, 0.454) 0 7px 29px 0;
+  width: 40%;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  top: 80px;
+}
