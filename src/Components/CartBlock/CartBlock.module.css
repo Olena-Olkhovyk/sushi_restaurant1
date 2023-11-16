@@ -150,7 +150,6 @@ h2 {
   }
   .mobileRightBar {
     display: block;
-    /* width: 110%; */
     height: 150px;
   }
   .mobileItemsPrice {
@@ -163,7 +162,6 @@ h2 {
   .mobileBtnContainer {
     position: relative;
     width: 100%;
-    /* left: 5%; */
     margin: 5px;
   }
   .mobileOrderNow {
