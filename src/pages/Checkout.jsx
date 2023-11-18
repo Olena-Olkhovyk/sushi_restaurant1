@@ -30,7 +30,7 @@ export const Checkout = () => {
           dispatch(clearItem());
           setTimeout(() => {
             navigate("/");
-          }, 2500);
+          }, 6000);
         },
         (error) => {
           alert("There is an " + error);
