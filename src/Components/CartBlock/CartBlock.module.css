@@ -3,13 +3,12 @@
   margin: 0 auto;
 }
 .deleteAll {
-  text-align: right;
-  position: relative;
-  right: 40px;
+  display: inline-block;
+  margin-left: 0.6rem;
 }
 .deleteAll:hover {
   cursor: pointer;
-  color: rgb(86, 85, 85);
+  color: rgb(67, 66, 66);
 }
 h2 {
   text-align: center;
