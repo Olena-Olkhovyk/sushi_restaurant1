@@ -1,8 +1,11 @@
 .sort {
-  position: absolute;
+  /* position: absolute;
   left: 50px;
   top: 230px;
-  margin-top: 3rem;
+  margin-top: 3rem; */
+  position: absolute;
+  top: 270px;
+  margin: 20px;
   z-index: 999;
 }
 .listWrapper {
@@ -34,4 +37,10 @@ b,
 .options:hover {
   cursor: pointer;
   color: rgba(229, 81, 18, 0.733);
+}
+@media screen and (max-width: 1233px) {
+  .sort {
+    position: absolute;
+    left: 7%;
+  }
 }

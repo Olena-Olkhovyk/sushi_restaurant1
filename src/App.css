@@ -1,6 +1,6 @@
-body {
+/* body {
   background-color: antiquewhite;
-}
+} */
 .container {
   background-image: url("./Components/assets/images/background.jpg");
   background-attachment: fixed;
@@ -18,9 +18,9 @@ body {
   max-width: 1000px;
   padding: 0 15px;
   min-width: 260px;
-  background-color: white;
   z-index: 3;
   margin-top: 10rem;
+  margin-bottom: 7rem;
 }
 a {
   text-decoration: none;
