@@ -2,7 +2,8 @@
   min-height: 600px;
 }
 .checkoutContainer h2 {
-  margin-top: 2rem;
+  margin-top: 7rem;
+  text-align: center;
 }
 form {
   max-width: 400px;
