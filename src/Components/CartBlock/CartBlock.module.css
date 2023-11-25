@@ -1,21 +1,23 @@
 .cartBlock {
   max-width: 1100px;
+  min-height: 550px;
   margin: 0 auto;
 }
 .deleteAll {
   display: inline-block;
   margin-left: 0.6rem;
+  font-weight: bold;
 }
 .deleteAll:hover {
   cursor: pointer;
   color: rgb(67, 66, 66);
 }
-h2 {
-  text-align: center;
-}
 .project {
   display: flex;
   justify-content: space-between;
+}
+.cartContainer {
+  margin-bottom: 6rem;
 }
 .shop {
   flex: 75%;
@@ -149,31 +151,25 @@ h2 {
   }
   .mobileRightBar {
     display: block;
-    height: 150px;
+    width: 98%;
+    position: fixed;
+    bottom: 0;
   }
   .mobileItemsPrice {
     display: flex;
     justify-content: space-around;
-    background-color: rgba(255, 255, 255, 0.139);
-    width: 100%;
-    margin: 5px;
-  }
-  .mobileBtnContainer {
-    position: relative;
-    width: 100%;
-    margin: 5px;
+    background-color: rgba(222, 184, 135, 0.689);
   }
   .mobileOrderNow {
+    background-color: burlywood;
     padding: 10px 15px;
-    background-color: antiquewhite;
     display: block;
-    width: 100%;
     text-align: center;
     font-size: 20px;
     font-weight: bold;
   }
   .mobileOrderNow:hover {
-    background-color: rgb(248, 206, 171);
+    background-color: rgba(248, 206, 171, 0.676);
     cursor: pointer;
   }
   .itemAmount {
