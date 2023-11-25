@@ -20,9 +20,6 @@ const CartBlock = () => {
   }
   return (
     <div className={classes.cartBlock}>
-      <h2>
-        <i className="fa-solid fa-cart-shopping"></i>Your Cart
-      </h2>
       <p onClick={deleteAllItems} className={classes.deleteAll}>
         <i className="fa-solid fa-trash"></i>Delete all
       </p>
