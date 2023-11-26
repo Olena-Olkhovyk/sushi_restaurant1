@@ -1,3 +1,4 @@
+import React from "react";
 import styles from "./Header.module.css";
 import logo from "../assets/images/logo.png";
 
@@ -9,6 +10,14 @@ const Header = () => {
   const { items, totalPrice } = useSelector(selectCart);
   const totalItems = items.reduce((sum, item) => sum + item.count, 0);
   const location = useLocation();
+
+  React.useEffect(() => {
+    const json = JSON.stringify(items);
+
+    if (items.length !== 0) {
+      localStorage.setItem("cart", json);
+    }
+  }, [items]);
   return (
     <div className={styles.Header}>
       <div className={styles.logoImg}>
