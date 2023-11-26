@@ -10,7 +10,9 @@ const EmptyCart = () => {
         Most likely, you didn't order anything. <br />
         To order sushi, go back to the main page.
       </p>
-      <img src={emptyCart} alt="empty cart information" />
+      <div className={classes.imgContainer}>
+        <img src={emptyCart} alt="empty cart information" />
+      </div>
       <Link to="/" className={classes.backShopBtn}>
         <i className="fa-solid fa-chevron-left"></i> Back to shop
       </Link>

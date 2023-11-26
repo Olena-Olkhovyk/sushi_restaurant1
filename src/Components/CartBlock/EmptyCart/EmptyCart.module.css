@@ -4,18 +4,34 @@
   font-size: 18px;
   letter-spacing: 1px;
 }
+.emptyCartBlock h1,
+.emptyCartBlock p,
+.imgContainer {
+  width: 80%;
+  background-color: white;
+}
+.emptyCartBlock h1 {
+  margin: 0 auto;
+  box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
+}
 .emptyCartBlock p {
-  color: grey;
   letter-spacing: 2px;
+  margin-top: 39px;
+  font-weight: bold;
+  margin: 0 auto;
+  box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
+}
+.imgContainer {
+  height: auto;
+  margin: 0 auto;
+  box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
 }
 .emptyCartBlock img {
-  width: 35%;
-  height: auto;
+  width: 60%;
 }
 .backShopBtn {
   display: block;
   margin: 0 auto;
-  background-color: transparent;
   width: 25%;
   padding: 10px 12px;
   font-size: 19px;
@@ -23,7 +39,6 @@
   letter-spacing: 2px;
 }
 .backShopBtn:hover {
-  background-color: rgba(128, 128, 128, 0.196);
   cursor: pointer;
   font-weight: bold;
 }
