@@ -1,14 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { GetCartFromLS } from "../../Components/utils/GetCartFromLs";
 import { CalcTotalPrice } from "../../Components/utils/CalcTotalPrice";
-// const loadCartFromLocalStorage = () => {
-//   const cartFromLocalStorage = JSON.parse(localStorage.getItem("cart"));
-//   return cartFromLocalStorage || { totalPrice: 0, items: [] };
-// };
-// const saveCartToLocalStorage = (cart) => {
-//   localStorage.setItem("cart", JSON.stringify(cart));
-// };
-// const initialState = loadCartFromLocalStorage();
 const cartData = GetCartFromLS();
 const initialState = {
   totalPrice: cartData.totalPrice,
