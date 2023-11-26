@@ -40,36 +40,39 @@ const ItemDetail = () => {
             />
           </div>
           <div className={classes.infoBlock}>
-            <h1 className={classes.title}>{sushi.title}</h1>
-            <h2 className={classes.weight}>{sushi.weight}g</h2>
+            <h1 className={classes.title}>
+              {sushi.title}({sushi.weight}g)
+            </h1>
             <Sauces
               sauceType={sauceType}
               activeId={activeId}
               setActiveId={setActiveId}
             />
-            <h2>{sushi.price}$</h2>
-            <AddToCartButton
-              id={sushi.id}
-              image={sushi.image}
-              title={sushi.title}
-              price={sushi.price}
-              activeId={activeId}
-              sauceType={sauceType}
-            />
-          </div>
-        </div>
-        <h3 className={classes.ingridientsTitle}>Ingredients</h3>
-        <div className={classes.ingredientsBlock}>
-          {[1, 2, 3, 4, 5, 6].map((ingredientIndex) => (
-            <div key={ingredientIndex}>
-              <img
-                src={sushi[`ingredientImg${ingredientIndex}`]}
-                className={classes.ingridientImg}
-                alt={sushi[`ingridientTitle${ingredientIndex}`]}
-              />
-              <p>{sushi[`ingridientTitle${ingredientIndex}`]}</p>
+            <h3 className={classes.ingridientsTitle}>Ingredients</h3>
+            <div className={classes.ingredientsBlock}>
+              {[1, 2, 3, 4, 5, 6].map((ingredientIndex) => (
+                <div key={ingredientIndex}>
+                  <img
+                    src={sushi[`ingredientImg${ingredientIndex}`]}
+                    className={classes.ingridientImg}
+                    alt={sushi[`ingridientTitle${ingredientIndex}`]}
+                  />
+                  <p>{sushi[`ingridientTitle${ingredientIndex}`]}</p>
+                </div>
+              ))}
             </div>
-          ))}
+            <div className={classes.orderContainer}>
+              <h2>{sushi.price}$</h2>
+              <AddToCartButton
+                id={sushi.id}
+                image={sushi.image}
+                title={sushi.title}
+                price={sushi.price}
+                activeId={activeId}
+                sauceType={sauceType}
+              />
+            </div>{" "}
+          </div>
         </div>
       </div>
     </>

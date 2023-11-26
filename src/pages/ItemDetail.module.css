@@ -1,83 +1,77 @@
-.itemDetailBlock {
-  max-height: 1000px;
-}
 .itemDetailBlockInfo {
   display: flex;
-  gap: 5px;
-  margin: 20px;
   background-color: white;
+  border-radius: 10px;
+  width: 90%;
+  height: 440px;
+  margin: 0 auto;
+  border: 1px solid rgba(0, 0, 0, 0.297);
+}
+.itemDetailBlockInfo:hover {
+  box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
 }
 .mainImgContain {
-  width: 55%;
+  width: 50%;
   min-width: 350px;
 }
 .mainImg {
   width: 90%;
-  height: auto;
+  height: 350px;
+  border-radius: 10px;
+  margin: 20px;
 }
 .infoBlock {
-  width: 45%;
+  background-color: white;
+  width: 50%;
   min-width: 270px;
   min-height: auto;
   text-align: center;
-  padding: 20px;
-  border: 1px solid rgba(0, 0, 0, 0.297);
 }
 .title {
   letter-spacing: 2px;
-}
-.weight {
-  margin-bottom: 70px;
-  color: grey;
-}
-.ingridientsTitle {
-  margin-left: 20px;
-  letter-spacing: 2px;
+  text-align: center;
 }
 .ingredientsBlock {
-  width: 44%;
-  min-width: 350px;
-  margin: 20px;
-  padding: 10px;
   display: flex;
   justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-  background-color: white;
+  position: relative;
+  left: 71px;
 }
 .ingridientImg {
   width: 80px;
   height: auto;
 }
-@media screen and (max-width: 1158px) {
-  .title {
-    margin-bottom: 10px;
-  }
+.ingridientImg:hover {
+  width: 90px;
 }
 @media screen and (max-width: 1063px) {
   .itemDetailBlockInfo {
     flex-direction: column;
     gap: 0;
     margin: 15px;
+    height: 930px;
+    margin: 0 auto;
+    width: 80%;
+    min-width: 600px;
   }
   .mainImgContain {
     width: 100%;
-    min-width: 80px;
+    min-width: 500px;
   }
   .mainImg {
-    width: 100%;
+    width: 95%;
+    height: 450px;
   }
   .infoBlock {
     margin: 0 auto;
-    width: 88%;
-    min-width: 100px;
+    width: 100%;
   }
   .ingredientsBlock {
     width: 80%;
     margin: 0 auto;
     text-align: center;
   }
-  .ingridientsTitle {
-    text-align: center;
+  .ingridientImg {
+    width: 100px;
   }
 }
