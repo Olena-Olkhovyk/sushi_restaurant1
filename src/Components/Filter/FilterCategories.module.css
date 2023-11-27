@@ -1,12 +1,10 @@
 .listWrapper {
   background-color: white;
-  position: fixed;
-  margin-top: 5rem;
+  position: absolute;
   z-index: 999;
   border-radius: 5px;
-  top: 15rem;
-  bottom: 10px;
-  left: 10px;
+  top: 19rem;
+  bottom: 15px;
   padding: 12px 15px;
   z-index: 1;
   overflow-y: auto;
@@ -18,7 +16,7 @@
   list-style: none;
   font-size: 15px;
   color: black;
-  padding: 5px 8px;
+  padding: 5px 15px;
   font-weight: 700;
   transition: all 0.5s ease;
   display: flex;
@@ -41,11 +39,9 @@ li.active {
     justify-content: center;
     justify-content: space-around;
     position: fixed;
-    bottom: 0;
+    bottom: -20px;
     left: auto;
     top: auto;
     width: 95%;
-    margin: 0 auto;
-    margin-top: 2rem;
   }
 }
