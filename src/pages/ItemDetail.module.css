@@ -75,3 +75,67 @@
     width: 100px;
   }
 }
+@media screen and (max-width: 768px) {
+  .itemDetailBlockInfo {
+    margin: 0 auto;
+    width: 60%;
+    min-width: 450px;
+    height: 750px;
+  }
+  .mainImg {
+    width: 80%;
+    height: 300px;
+  }
+  .infoBlock {
+    font-size: 12px;
+  }
+  .ingridientImg {
+    width: 65px;
+  }
+}
+@media screen and (max-width: 616px) {
+  .itemDetailBlockInfo {
+    width: 40%;
+    min-width: 300px;
+    height: 600px;
+  }
+  .mainImgContain {
+    width: 50%;
+    min-width: 300px;
+  }
+  .mainImg {
+    width: 89%;
+    height: 220px;
+  }
+  .infoBlock {
+    font-size: 10px;
+  }
+  .ingridientImg {
+    width: 55px;
+  }
+}
+@media screen and (max-width: 616px) {
+  .itemDetailBlockInfo {
+    width: 40%;
+    min-width: 280px;
+    margin: 0 auto;
+    height: 500px;
+  }
+  .mainImgContain {
+    width: 45%;
+    min-width: 280px;
+  }
+  .mainImg {
+    width: 85%;
+    height: 150px;
+  }
+  .infoBlock {
+    font-size: 8px;
+  }
+  .ingredientsBlock {
+    margin-left: -10px;
+  }
+  .ingridientImg {
+    width: 40px;
+  }
+}
