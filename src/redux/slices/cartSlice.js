@@ -1,11 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { GetCartFromLS } from "../../Components/utils/GetCartFromLs";
-import { CalcTotalPrice } from "../../Components/utils/CalcTotalPrice";
-const cartData = GetCartFromLS();
-const initialState = {
-  totalPrice: cartData.totalPrice,
-  items: cartData.items,
+const loadCartFromLocalStorage = () => {
+  const cartFromLocalStorage = JSON.parse(localStorage.getItem("cart"));
+  return cartFromLocalStorage || { totalPrice: 0, items: [] };
 };
+const saveCartToLocalStorage = (cart) => {
+  localStorage.setItem("cart", JSON.stringify(cart));
+};
+const initialState = loadCartFromLocalStorage();
+
 const cartSlice = createSlice({
   name: "cart",
   initialState,
@@ -20,7 +22,10 @@ const cartSlice = createSlice({
           count: 1,
         });
       }
-      state.totalPrice = CalcTotalPrice(state.items);
+      state.totalPrice = state.items.reduce((sum, obj) => {
+        return obj.price * obj.count + sum;
+      }, 0);
+      saveCartToLocalStorage(state);
     },
     minusItem(state, action) {
       const findItem = state.items.find((obj) => obj.id === action.payload);
@@ -30,12 +35,16 @@ const cartSlice = createSlice({
       if (findItem.count === 0) {
         state.items = state.items.filter((obj) => obj.id !== action.payload);
       }
-      state.totalPrice = CalcTotalPrice(state.items);
+      state.totalPrice = state.items.reduce((sum, obj) => {
+        return obj.price * obj.count + sum;
+      }, 0);
       localStorage.removeItem("cart");
     },
     removeItem(state, action) {
       state.items = state.items.filter((obj) => obj.id !== action.payload);
-      state.totalPrice = CalcTotalPrice(state.items);
+      state.totalPrice = state.items.reduce((sum, obj) => {
+        return obj.price * obj.count + sum;
+      }, 0);
       localStorage.removeItem("cart");
     },
     clearItem(state) {
