@@ -116,26 +116,23 @@
 }
 @media screen and (max-width: 616px) {
   .itemDetailBlockInfo {
-    width: 40%;
-    min-width: 280px;
+    width: 50%;
+    min-width: 320px;
     margin: 0 auto;
-    height: 500px;
+    height: 570px;
   }
   .mainImgContain {
-    width: 45%;
-    min-width: 280px;
+    width: 50%;
+    min-width: 300px;
   }
   .mainImg {
-    width: 85%;
+    width: 90%;
     height: 150px;
-  }
-  .infoBlock {
-    font-size: 8px;
   }
   .ingredientsBlock {
     margin-left: -10px;
   }
-  .ingridientImg {
-    width: 40px;
+  .infoBlock {
+    font-size: 12px;
   }
 }
