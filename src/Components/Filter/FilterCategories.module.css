@@ -44,4 +44,7 @@ li.active {
     top: auto;
     width: 95%;
   }
+  .listWrapper li {
+    padding: 5px 10px;
+  }
 }
