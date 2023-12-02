@@ -23,8 +23,11 @@ input::placeholder {
   font-size: 20px;
   font-weight: bold;
 }
-@media (max-width: 622px) {
+@media (max-width: 670px) {
   input::placeholder {
     font-size: 15px;
+  }
+  input[type="search"]:focus {
+    width: 50%;
   }
 }
