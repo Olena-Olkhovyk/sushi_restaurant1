@@ -35,7 +35,8 @@
   display: flex;
   justify-content: center;
   position: relative;
-  left: 71px;
+  left: 20px;
+  gap: 1rem;
 }
 .ingridientImg {
   width: 80px;
@@ -113,7 +114,7 @@
   }
   .ingredientsBlock {
     flex-wrap: wrap;
-    margin-left: -38px;
+    left: -10px;
   }
   .infoBlock {
     font-size: 17px;
