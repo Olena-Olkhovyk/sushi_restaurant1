@@ -1,8 +1,4 @@
-/* body {
-  background-color: antiquewhite;
-} */
 .container {
-  background-image: url("./Components/assets/images/background.jpg");
   background-attachment: fixed;
   background-size: cover;
   max-width: 85rem;
